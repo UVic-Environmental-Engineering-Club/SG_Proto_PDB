@@ -1,0 +1,622 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD23\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">23/10/21</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">12:02:13 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc" class="file"><acronym title="C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc">C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">94</td></tr>
+</table>
+</td>
+</table><a name="IDTUYBY42PB3RZNA514UGMZ2XU2NY2TCUDR5DS0RBU4M5WUC1ANE5J"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBPZ04BX3I4VYGX3UTSOR00MTNPYW5RPZOIYSBUJUQXAPK3VWMRCN">Clearance Constraint (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDBTEW3UJ5SJ3IKA3YWVNM1NPYWME5XQHUAIRCAMP4J5TIE5XPBG0O">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDS25HBFPK5OIQCYEVGZR4JQK4MCF0OWXZVMCCRKHVDJSQ3MJZZZ3F">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZAPJL4PPRBQYHH40AOP3OQL1YC5KNLW3PZDCVJMTHCBQHPSGDCKF">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDLU0WBDHRHYACNFL2BKIKAVDMBFD35M0ORFPVSJCRANECOZUMPZ1N">Width Constraint (Min=0.254mm) (Max=0.5mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDIMNJALHAQ3J5PBQPZXRZ1SH2FCMA0CLRIG11EZIJ02RZC3W5Y3DL">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDEPEWNFPDJU0KGQESJVPBOMHZHHDKYR5A0RSP3II1A2AKYFWKOVKP">Hole Size Constraint (Min=0.025mm) (Max=3.5mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQDJ3DZGSPWE1G0H2X0KUKPDIIIVYFXNVMZLSVGA0QWOJALFEPSJ">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDX2JSBRYLGX41CKNP0QUQYFF4ZDJOVCB2R3DPO1EV4PG12ZGJGE4E">Minimum Solder Mask Sliver (Gap=0.2mm) (All),(All)</a></td>
+<td class="column2">5</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDX31PCS1WTL3BD55HZR13MJN3WE2MUZ5MCNDEYSCN0KD0OSXUAWAD">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">83</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUF2U5OYDOAMQI2IZTNAXUTDUPH4OSBTJFVKDZEPLYNYKOAFGUDTE">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOL2K4POW43LKJE2OEJDHKVVXVOHIZ1IXJJ0YIXH43101IJ2XSSFG">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFZKOIK1XD4L4KS2SNONFDDXZYLWGZDAK31CQDYGPCCIDB4YX5JIF">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">6</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID21V5IYBYCTICHA5HWJ4OSFOV01QTWS4VRG02MI2IGLD5H5RSV3N">Height Constraint (Min=0mm) (Max=35mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">94</td>
+</tr>
+</table><br><a name="IDX2JSBRYLGX41CKNP0QUQYFF4ZDJOVCB2R3DPO1EV4PG12ZGJGE4E"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.2mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1222.855mil|Location2.X=1231.979mil|Location1.Y=4667.092mil|Location2.Y=4676.216mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1222.855mil|Location2.X=1231.979mil|Location1.Y=4667.092mil|Location2.Y=4676.216mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.097mm &lt; 0.2mm) Between Pad J1-1(7.403mm,-7.94mm) on Top Layer And Pad J1-2(7.403mm,-8.74mm) on Top Layer [Top Solder] Mask Sliver [0.097mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1222.855mil|Location2.X=1231.979mil|Location1.Y=4635.595mil|Location2.Y=4644.719mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1222.855mil|Location2.X=1231.979mil|Location1.Y=4635.595mil|Location2.Y=4644.719mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.097mm &lt; 0.2mm) Between Pad J1-2(7.403mm,-8.74mm) on Top Layer And Pad J1-3(7.403mm,-9.54mm) on Top Layer [Top Solder] Mask Sliver [0.097mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1222.855mil|Location2.X=1231.979mil|Location1.Y=4604.099mil|Location2.Y=4613.223mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1222.855mil|Location2.X=1231.979mil|Location1.Y=4604.099mil|Location2.Y=4613.223mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.097mm &lt; 0.2mm) Between Pad J1-3(7.403mm,-9.54mm) on Top Layer And Pad J1-4(7.403mm,-10.34mm) on Top Layer [Top Solder] Mask Sliver [0.097mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1319.438mil|Location2.X=1328.562mil|Location1.Y=4572.603mil|Location2.Y=4581.727mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1319.438mil|Location2.X=1328.562mil|Location1.Y=4572.603mil|Location2.Y=4581.727mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.097mm &lt; 0.2mm) Between Pad J1-4(7.403mm,-10.34mm) on Top Layer And Pad J1-5(7.403mm,-11.14mm) on Top Layer [Top Solder] Mask Sliver [0.097mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1491.501mil|Location2.X=1500.625mil|Location1.Y=4635.162mil|Location2.Y=4644.286mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1491.501mil|Location2.X=1500.625mil|Location1.Y=4635.162mil|Location2.Y=4644.286mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.199mm &lt; 0.2mm) Between Pad U1-1(12.954mm,-9.652mm) on Top Layer And Via (13mm,-8.6mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.199mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDX31PCS1WTL3BD55HZR13MJN3WE2MUZ5MCNDEYSCN0KD0OSXUAWAD"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1452.904mil|Location2.X=1460.571mil|Location1.Y=3800.266mil|Location2.Y=3807.933mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1452.904mil|Location2.X=1460.571mil|Location1.Y=3800.266mil|Location2.Y=3807.933mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (11.938mm,-28.377mm) on Top Overlay And Pad D2-A(12mm,-29.54mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1424.55mil|Location2.X=1432.216mil|Location1.Y=3953.342mil|Location2.Y=3961.008mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1424.55mil|Location2.X=1432.216mil|Location1.Y=3953.342mil|Location2.Y=3961.008mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (11.938mm,-28.377mm) on Top Overlay And Pad D2-K(12mm,-27mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1728.495mil|Location2.X=1736.161mil|Location1.Y=3800.266mil|Location2.Y=3807.933mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1728.495mil|Location2.X=1736.161mil|Location1.Y=3800.266mil|Location2.Y=3807.933mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (18.938mm,-28.377mm) on Top Overlay And Pad D3-A(19mm,-29.54mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1700.14mil|Location2.X=1707.807mil|Location1.Y=3953.342mil|Location2.Y=3961.008mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1700.14mil|Location2.X=1707.807mil|Location1.Y=3953.342mil|Location2.Y=3961.008mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (18.938mm,-28.377mm) on Top Overlay And Pad D3-K(19mm,-27mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2004.085mil|Location2.X=2011.752mil|Location1.Y=3800.266mil|Location2.Y=3807.933mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2004.085mil|Location2.X=2011.752mil|Location1.Y=3800.266mil|Location2.Y=3807.933mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (25.938mm,-28.377mm) on Top Overlay And Pad D4-A(26mm,-29.54mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1975.731mil|Location2.X=1983.398mil|Location1.Y=3953.342mil|Location2.Y=3961.008mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1975.731mil|Location2.X=1983.398mil|Location1.Y=3953.342mil|Location2.Y=3961.008mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (25.938mm,-28.377mm) on Top Overlay And Pad D4-K(26mm,-27mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2255.753mil|Location2.X=2267.003mil|Location1.Y=4712.613mil|Location2.Y=4724.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2255.753mil|Location2.X=2267.003mil|Location1.Y=4712.613mil|Location2.Y=4724.953mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.124mm &lt; 0.254mm) Between Arc (33.036mm,-13.208mm) on Top Overlay And Pad R3-NPH1(34.036mm,-8.208mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.124mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2393.351mil|Location2.X=2404.601mil|Location1.Y=4684.556mil|Location2.Y=4695.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2393.351mil|Location2.X=2404.601mil|Location1.Y=4684.556mil|Location2.Y=4695.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.155mm &lt; 0.254mm) Between Arc (33.036mm,-13.208mm) on Top Overlay And Pad R3-NPH1(34.036mm,-8.208mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.155mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2255.753mil|Location2.X=2267.003mil|Location1.Y=4235.101mil|Location2.Y=4247.387mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2255.753mil|Location2.X=2267.003mil|Location1.Y=4235.101mil|Location2.Y=4247.387mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.124mm &lt; 0.254mm) Between Arc (33.036mm,-13.208mm) on Top Overlay And Pad R3-NPH2(34.036mm,-18.208mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.124mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2393.351mil|Location2.X=2404.601mil|Location1.Y=4264.193mil|Location2.Y=4275.443mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2393.351mil|Location2.X=2404.601mil|Location1.Y=4264.193mil|Location2.Y=4275.443mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.155mm &lt; 0.254mm) Between Arc (33.036mm,-13.208mm) on Top Overlay And Pad R3-NPH2(34.036mm,-18.208mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.155mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1177.313mil|Location2.X=1184.98mil|Location1.Y=3800.266mil|Location2.Y=3807.933mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1177.313mil|Location2.X=1184.98mil|Location1.Y=3800.266mil|Location2.Y=3807.933mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (4.938mm,-28.377mm) on Top Overlay And Pad D1-A(5mm,-29.54mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1148.959mil|Location2.X=1156.626mil|Location1.Y=3953.342mil|Location2.Y=3961.008mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1148.959mil|Location2.X=1156.626mil|Location1.Y=3953.342mil|Location2.Y=3961.008mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (4.938mm,-28.377mm) on Top Overlay And Pad D1-K(5mm,-27mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1602.879mil|Location2.X=1614.129mil|Location1.Y=4737.997mil|Location2.Y=4749.247mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1602.879mil|Location2.X=1614.129mil|Location1.Y=4737.997mil|Location2.Y=4749.247mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C1-1(16.256mm,-7.112mm) on Top Layer And Track (14.156mm,-6.312mm)(16.956mm,-6.312mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1602.879mil|Location2.X=1614.129mil|Location1.Y=4737.997mil|Location2.Y=4749.247mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1602.879mil|Location2.X=1614.129mil|Location1.Y=4737.997mil|Location2.Y=4749.247mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C1-1(16.256mm,-7.112mm) on Top Layer And Track (14.156mm,-6.312mm)(16.956mm,-6.312mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1634.375mil|Location2.X=1645.625mil|Location1.Y=4690.753mil|Location2.Y=4702.003mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1634.375mil|Location2.X=1645.625mil|Location1.Y=4690.753mil|Location2.Y=4702.003mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C1-1(16.256mm,-7.112mm) on Top Layer And Track (14.156mm,-7.912mm)(16.956mm,-7.912mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1634.375mil|Location2.X=1645.625mil|Location1.Y=4690.753mil|Location2.Y=4702.003mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1634.375mil|Location2.X=1645.625mil|Location1.Y=4690.753mil|Location2.Y=4702.003mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C1-1(16.256mm,-7.112mm) on Top Layer And Track (14.156mm,-7.912mm)(16.956mm,-7.912mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1638.312mil|Location2.X=1649.562mil|Location1.Y=4694.69mil|Location2.Y=4705.94mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1638.312mil|Location2.X=1649.562mil|Location1.Y=4694.69mil|Location2.Y=4705.94mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C1-1(16.256mm,-7.112mm) on Top Layer And Track (16.956mm,-7.912mm)(16.956mm,-6.312mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1638.312mil|Location2.X=1649.562mil|Location1.Y=4694.69mil|Location2.Y=4705.94mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1638.312mil|Location2.X=1649.562mil|Location1.Y=4694.69mil|Location2.Y=4705.94mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C1-1(16.256mm,-7.112mm) on Top Layer And Track (16.956mm,-7.912mm)(16.956mm,-6.312mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1547.761mil|Location2.X=1559.011mil|Location1.Y=4737.997mil|Location2.Y=4749.247mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1547.761mil|Location2.X=1559.011mil|Location1.Y=4737.997mil|Location2.Y=4749.247mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C1-2(14.856mm,-7.112mm) on Top Layer And Track (14.156mm,-6.312mm)(16.956mm,-6.312mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1547.761mil|Location2.X=1559.011mil|Location1.Y=4737.997mil|Location2.Y=4749.247mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1547.761mil|Location2.X=1559.011mil|Location1.Y=4737.997mil|Location2.Y=4749.247mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C1-2(14.856mm,-7.112mm) on Top Layer And Track (14.156mm,-6.312mm)(16.956mm,-6.312mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1543.824mil|Location2.X=1555.074mil|Location1.Y=4694.69mil|Location2.Y=4705.94mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1543.824mil|Location2.X=1555.074mil|Location1.Y=4694.69mil|Location2.Y=4705.94mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C1-2(14.856mm,-7.112mm) on Top Layer And Track (14.156mm,-7.912mm)(14.156mm,-6.312mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1543.824mil|Location2.X=1555.074mil|Location1.Y=4694.69mil|Location2.Y=4705.94mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1543.824mil|Location2.X=1555.074mil|Location1.Y=4694.69mil|Location2.Y=4705.94mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C1-2(14.856mm,-7.112mm) on Top Layer And Track (14.156mm,-7.912mm)(14.156mm,-6.312mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1579.257mil|Location2.X=1590.507mil|Location1.Y=4690.753mil|Location2.Y=4702.003mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1579.257mil|Location2.X=1590.507mil|Location1.Y=4690.753mil|Location2.Y=4702.003mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C1-2(14.856mm,-7.112mm) on Top Layer And Track (14.156mm,-7.912mm)(16.956mm,-7.912mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1579.257mil|Location2.X=1590.507mil|Location1.Y=4690.753mil|Location2.Y=4702.003mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1579.257mil|Location2.X=1590.507mil|Location1.Y=4690.753mil|Location2.Y=4702.003mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C1-2(14.856mm,-7.112mm) on Top Layer And Track (14.156mm,-7.912mm)(16.956mm,-7.912mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1778.942mil|Location2.X=1790.192mil|Location1.Y=4501.619mil|Location2.Y=4512.869mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1778.942mil|Location2.X=1790.192mil|Location1.Y=4501.619mil|Location2.Y=4512.869mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C2-1(20.828mm,-13.016mm) on Top Layer And Track (20.028mm,-12.316mm)(21.628mm,-12.316mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1778.942mil|Location2.X=1790.192mil|Location1.Y=4501.619mil|Location2.Y=4512.869mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1778.942mil|Location2.X=1790.192mil|Location1.Y=4501.619mil|Location2.Y=4512.869mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C2-1(20.828mm,-13.016mm) on Top Layer And Track (20.028mm,-12.316mm)(21.628mm,-12.316mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1775.005mil|Location2.X=1786.255mil|Location1.Y=4466.186mil|Location2.Y=4477.436mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1775.005mil|Location2.X=1786.255mil|Location1.Y=4466.186mil|Location2.Y=4477.436mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C2-1(20.828mm,-13.016mm) on Top Layer And Track (20.028mm,-15.116mm)(20.028mm,-12.316mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1775.005mil|Location2.X=1786.255mil|Location1.Y=4466.186mil|Location2.Y=4477.436mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1775.005mil|Location2.X=1786.255mil|Location1.Y=4466.186mil|Location2.Y=4477.436mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C2-1(20.828mm,-13.016mm) on Top Layer And Track (20.028mm,-15.116mm)(20.028mm,-12.316mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1822.249mil|Location2.X=1833.499mil|Location1.Y=4466.186mil|Location2.Y=4477.436mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1822.249mil|Location2.X=1833.499mil|Location1.Y=4466.186mil|Location2.Y=4477.436mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C2-1(20.828mm,-13.016mm) on Top Layer And Track (21.628mm,-15.116mm)(21.628mm,-12.316mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1822.249mil|Location2.X=1833.499mil|Location1.Y=4466.186mil|Location2.Y=4477.436mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1822.249mil|Location2.X=1833.499mil|Location1.Y=4466.186mil|Location2.Y=4477.436mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C2-1(20.828mm,-13.016mm) on Top Layer And Track (21.628mm,-15.116mm)(21.628mm,-12.316mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1775.005mil|Location2.X=1786.255mil|Location1.Y=4411.068mil|Location2.Y=4422.318mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1775.005mil|Location2.X=1786.255mil|Location1.Y=4411.068mil|Location2.Y=4422.318mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C2-2(20.828mm,-14.416mm) on Top Layer And Track (20.028mm,-15.116mm)(20.028mm,-12.316mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1775.005mil|Location2.X=1786.255mil|Location1.Y=4411.068mil|Location2.Y=4422.318mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1775.005mil|Location2.X=1786.255mil|Location1.Y=4411.068mil|Location2.Y=4422.318mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C2-2(20.828mm,-14.416mm) on Top Layer And Track (20.028mm,-15.116mm)(20.028mm,-12.316mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1818.312mil|Location2.X=1829.562mil|Location1.Y=4407.131mil|Location2.Y=4418.381mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1818.312mil|Location2.X=1829.562mil|Location1.Y=4407.131mil|Location2.Y=4418.381mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C2-2(20.828mm,-14.416mm) on Top Layer And Track (20.028mm,-15.116mm)(21.628mm,-15.116mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1818.312mil|Location2.X=1829.562mil|Location1.Y=4407.131mil|Location2.Y=4418.381mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1818.312mil|Location2.X=1829.562mil|Location1.Y=4407.131mil|Location2.Y=4418.381mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C2-2(20.828mm,-14.416mm) on Top Layer And Track (20.028mm,-15.116mm)(21.628mm,-15.116mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1822.249mil|Location2.X=1833.499mil|Location1.Y=4411.068mil|Location2.Y=4422.318mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1822.249mil|Location2.X=1833.499mil|Location1.Y=4411.068mil|Location2.Y=4422.318mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C2-2(20.828mm,-14.416mm) on Top Layer And Track (21.628mm,-15.116mm)(21.628mm,-12.316mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1822.249mil|Location2.X=1833.499mil|Location1.Y=4411.068mil|Location2.Y=4422.318mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1822.249mil|Location2.X=1833.499mil|Location1.Y=4411.068mil|Location2.Y=4422.318mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad C2-2(20.828mm,-14.416mm) on Top Layer And Track (21.628mm,-15.116mm)(21.628mm,-12.316mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1173.471mil|Location2.X=1181.138mil|Location1.Y=3868.175mil|Location2.Y=3875.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1173.471mil|Location2.X=1181.138mil|Location1.Y=3868.175mil|Location2.Y=3875.841mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad D1-A(5mm,-29.54mm) on Multi-Layer And Track (4.238mm,-28.651mm)(5.762mm,-28.651mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1177.269mil|Location2.X=1184.936mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1177.269mil|Location2.X=1184.936mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad D1-K(5mm,-27mm) on Multi-Layer And Track (4.238mm,-27.889mm)(5.762mm,-27.889mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1177.269mil|Location2.X=1184.936mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1177.269mil|Location2.X=1184.936mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad D1-K(5mm,-27mm) on Multi-Layer And Track (4.238mm,-28.651mm)(5mm,-27.889mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1177.269mil|Location2.X=1184.936mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1177.269mil|Location2.X=1184.936mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad D1-K(5mm,-27mm) on Multi-Layer And Track (5mm,-27.889mm)(5.762mm,-28.651mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1449.061mil|Location2.X=1456.728mil|Location1.Y=3868.175mil|Location2.Y=3875.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1449.061mil|Location2.X=1456.728mil|Location1.Y=3868.175mil|Location2.Y=3875.841mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad D2-A(12mm,-29.54mm) on Multi-Layer And Track (11.238mm,-28.651mm)(12.762mm,-28.651mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1452.86mil|Location2.X=1460.526mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1452.86mil|Location2.X=1460.526mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad D2-K(12mm,-27mm) on Multi-Layer And Track (11.238mm,-27.889mm)(12.762mm,-27.889mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1452.86mil|Location2.X=1460.526mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1452.86mil|Location2.X=1460.526mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad D2-K(12mm,-27mm) on Multi-Layer And Track (11.238mm,-28.651mm)(12mm,-27.889mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1452.86mil|Location2.X=1460.526mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1452.86mil|Location2.X=1460.526mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad D2-K(12mm,-27mm) on Multi-Layer And Track (12mm,-27.889mm)(12.762mm,-28.651mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1724.652mil|Location2.X=1732.319mil|Location1.Y=3868.175mil|Location2.Y=3875.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1724.652mil|Location2.X=1732.319mil|Location1.Y=3868.175mil|Location2.Y=3875.841mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad D3-A(19mm,-29.54mm) on Multi-Layer And Track (18.238mm,-28.651mm)(19.762mm,-28.651mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1728.45mil|Location2.X=1736.117mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1728.45mil|Location2.X=1736.117mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad D3-K(19mm,-27mm) on Multi-Layer And Track (18.238mm,-27.889mm)(19.762mm,-27.889mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1728.45mil|Location2.X=1736.117mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1728.45mil|Location2.X=1736.117mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad D3-K(19mm,-27mm) on Multi-Layer And Track (18.238mm,-28.651mm)(19mm,-27.889mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1728.45mil|Location2.X=1736.117mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1728.45mil|Location2.X=1736.117mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad D3-K(19mm,-27mm) on Multi-Layer And Track (19mm,-27.889mm)(19.762mm,-28.651mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2000.243mil|Location2.X=2007.909mil|Location1.Y=3868.175mil|Location2.Y=3875.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2000.243mil|Location2.X=2007.909mil|Location1.Y=3868.175mil|Location2.Y=3875.841mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad D4-A(26mm,-29.54mm) on Multi-Layer And Track (25.238mm,-28.651mm)(26.762mm,-28.651mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2004.041mil|Location2.X=2011.707mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2004.041mil|Location2.X=2011.707mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad D4-K(26mm,-27mm) on Multi-Layer And Track (25.238mm,-27.889mm)(26.762mm,-27.889mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2004.041mil|Location2.X=2011.707mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2004.041mil|Location2.X=2011.707mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad D4-K(26mm,-27mm) on Multi-Layer And Track (25.238mm,-28.651mm)(26mm,-27.889mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2004.041mil|Location2.X=2011.707mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2004.041mil|Location2.X=2011.707mil|Location1.Y=3898.175mil|Location2.Y=3905.841mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad D4-K(26mm,-27mm) on Multi-Layer And Track (26mm,-27.889mm)(26.762mm,-28.651mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1317.761mil|Location2.X=1329.011mil|Location1.Y=4671.934mil|Location2.Y=4683.184mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1317.761mil|Location2.X=1329.011mil|Location1.Y=4671.934mil|Location2.Y=4683.184mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.172mm &lt; 0.254mm) Between Pad J1-1(7.403mm,-7.94mm) on Top Layer And Track (8.8mm,-15.382mm)(8.8mm,-3.698mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.172mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1317.761mil|Location2.X=1329.011mil|Location1.Y=4640.438mil|Location2.Y=4651.688mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1317.761mil|Location2.X=1329.011mil|Location1.Y=4640.438mil|Location2.Y=4651.688mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.172mm &lt; 0.254mm) Between Pad J1-2(7.403mm,-8.74mm) on Top Layer And Track (8.8mm,-15.382mm)(8.8mm,-3.698mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.172mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1317.761mil|Location2.X=1329.011mil|Location1.Y=4608.942mil|Location2.Y=4620.192mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1317.761mil|Location2.X=1329.011mil|Location1.Y=4608.942mil|Location2.Y=4620.192mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.172mm &lt; 0.254mm) Between Pad J1-3(7.403mm,-9.54mm) on Top Layer And Track (8.8mm,-15.382mm)(8.8mm,-3.698mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.172mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1317.761mil|Location2.X=1329.011mil|Location1.Y=4577.446mil|Location2.Y=4588.696mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1317.761mil|Location2.X=1329.011mil|Location1.Y=4577.446mil|Location2.Y=4588.696mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.172mm &lt; 0.254mm) Between Pad J1-4(7.403mm,-10.34mm) on Top Layer And Track (8.8mm,-15.382mm)(8.8mm,-3.698mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.172mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1317.761mil|Location2.X=1329.011mil|Location1.Y=4545.95mil|Location2.Y=4557.2mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1317.761mil|Location2.X=1329.011mil|Location1.Y=4545.95mil|Location2.Y=4557.2mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.172mm &lt; 0.254mm) Between Pad J1-5(7.403mm,-11.14mm) on Top Layer And Track (8.8mm,-15.382mm)(8.8mm,-3.698mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.172mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=998.922mil|Location2.X=1010.172mil|Location1.Y=4423.784mil|Location2.Y=4435.034mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=998.922mil|Location2.X=1010.172mil|Location1.Y=4423.784mil|Location2.Y=4435.034mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.254mm) Between Pad J1-6(1.828mm,-13.99mm) on Top Layer And Track (-0.979mm,-14.493mm)(0.353mm,-14.493mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1102.269mil|Location2.X=1113.519mil|Location1.Y=4423.903mil|Location2.Y=4435.153mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1102.269mil|Location2.X=1113.519mil|Location1.Y=4423.903mil|Location2.Y=4435.153mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.254mm) Between Pad J1-6(1.828mm,-13.99mm) on Top Layer And Track (3.303mm,-14.49mm)(5.803mm,-14.49mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=998.922mil|Location2.X=1010.172mil|Location1.Y=4813.784mil|Location2.Y=4825.034mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=998.922mil|Location2.X=1010.172mil|Location1.Y=4813.784mil|Location2.Y=4825.034mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.254mm) Between Pad J1-6(1.828mm,-5.09mm) on Top Layer And Track (-0.979mm,-4.587mm)(0.353mm,-4.587mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1102.269mil|Location2.X=1113.519mil|Location1.Y=4813.666mil|Location2.Y=4824.916mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1102.269mil|Location2.X=1113.519mil|Location1.Y=4813.666mil|Location2.Y=4824.916mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.254mm) Between Pad J1-6(1.828mm,-5.09mm) on Top Layer And Track (3.303mm,-4.59mm)(5.803mm,-4.59mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1213.489mil|Location2.X=1224.739mil|Location1.Y=4423.903mil|Location2.Y=4435.153mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1213.489mil|Location2.X=1224.739mil|Location1.Y=4423.903mil|Location2.Y=4435.153mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.254mm) Between Pad J1-6(7.278mm,-13.99mm) on Top Layer And Track (3.303mm,-14.49mm)(5.803mm,-14.49mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1317.761mil|Location2.X=1329.011mil|Location1.Y=4404.217mil|Location2.Y=4415.467mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1317.761mil|Location2.X=1329.011mil|Location1.Y=4404.217mil|Location2.Y=4415.467mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.172mm &lt; 0.254mm) Between Pad J1-6(7.278mm,-13.99mm) on Top Layer And Track (8.8mm,-15.382mm)(8.8mm,-3.698mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.172mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1213.489mil|Location2.X=1224.739mil|Location1.Y=4813.666mil|Location2.Y=4824.916mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1213.489mil|Location2.X=1224.739mil|Location1.Y=4813.666mil|Location2.Y=4824.916mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.254mm) Between Pad J1-6(7.278mm,-5.09mm) on Top Layer And Track (3.303mm,-4.59mm)(5.803mm,-4.59mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1317.761mil|Location2.X=1329.011mil|Location1.Y=4754.611mil|Location2.Y=4765.861mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1317.761mil|Location2.X=1329.011mil|Location1.Y=4754.611mil|Location2.Y=4765.861mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.172mm &lt; 0.254mm) Between Pad J1-6(7.278mm,-5.09mm) on Top Layer And Track (8.8mm,-15.382mm)(8.8mm,-3.698mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.172mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1547.131mil|Location2.X=1558.381mil|Location1.Y=4288.745mil|Location2.Y=4299.995mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1547.131mil|Location2.X=1558.381mil|Location1.Y=4288.745mil|Location2.Y=4299.995mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.086mm &lt; 0.254mm) Between Pad R1-1(15.24mm,-18.466mm) on Top Layer And Track (14.224mm,-17.78mm)(16.256mm,-17.78mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.086mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1544.848mil|Location2.X=1556.098mil|Location1.Y=4247.682mil|Location2.Y=4258.932mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1544.848mil|Location2.X=1556.098mil|Location1.Y=4247.682mil|Location2.Y=4258.932mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.116mm &lt; 0.254mm) Between Pad R1-1(15.24mm,-18.466mm) on Top Layer And Track (14.224mm,-22.352mm)(14.224mm,-17.78mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.116mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1612.407mil|Location2.X=1623.657mil|Location1.Y=4247.682mil|Location2.Y=4258.932mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1612.407mil|Location2.X=1623.657mil|Location1.Y=4247.682mil|Location2.Y=4258.932mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.116mm &lt; 0.254mm) Between Pad R1-1(15.24mm,-18.466mm) on Top Layer And Track (16.256mm,-22.352mm)(16.256mm,-17.78mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.116mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1544.848mil|Location2.X=1556.098mil|Location1.Y=4121.698mil|Location2.Y=4132.948mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1544.848mil|Location2.X=1556.098mil|Location1.Y=4121.698mil|Location2.Y=4132.948mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.116mm &lt; 0.254mm) Between Pad R1-2(15.24mm,-21.666mm) on Top Layer And Track (14.224mm,-22.352mm)(14.224mm,-17.78mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.116mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1610.123mil|Location2.X=1621.373mil|Location1.Y=4120.005mil|Location2.Y=4131.255mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1610.123mil|Location2.X=1621.373mil|Location1.Y=4120.005mil|Location2.Y=4131.255mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.086mm &lt; 0.254mm) Between Pad R1-2(15.24mm,-21.666mm) on Top Layer And Track (14.224mm,-22.352mm)(16.256mm,-22.352mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.086mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1612.407mil|Location2.X=1623.657mil|Location1.Y=4121.698mil|Location2.Y=4132.948mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1612.407mil|Location2.X=1623.657mil|Location1.Y=4121.698mil|Location2.Y=4132.948mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.116mm &lt; 0.254mm) Between Pad R1-2(15.24mm,-21.666mm) on Top Layer And Track (16.256mm,-22.352mm)(16.256mm,-17.78mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.116mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1777.958mil|Location2.X=1789.208mil|Location1.Y=4543.036mil|Location2.Y=4554.286mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1777.958mil|Location2.X=1789.208mil|Location1.Y=4543.036mil|Location2.Y=4554.286mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.15mm &lt; 0.254mm) Between Pad R2-1(20.828mm,-11.139mm) on Top Layer And Track (20.128mm,-11.714mm)(20.128mm,-9.114mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1816.343mil|Location2.X=1827.593mil|Location1.Y=4540.084mil|Location2.Y=4551.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1816.343mil|Location2.X=1827.593mil|Location1.Y=4540.084mil|Location2.Y=4551.334mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.15mm &lt; 0.254mm) Between Pad R2-1(20.828mm,-11.139mm) on Top Layer And Track (20.128mm,-11.714mm)(21.528mm,-11.714mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1819.296mil|Location2.X=1830.546mil|Location1.Y=4543.036mil|Location2.Y=4554.286mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1819.296mil|Location2.X=1830.546mil|Location1.Y=4543.036mil|Location2.Y=4554.286mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.15mm &lt; 0.254mm) Between Pad R2-1(20.828mm,-11.139mm) on Top Layer And Track (21.528mm,-11.714mm)(21.528mm,-9.114mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1777.958mil|Location2.X=1789.208mil|Location1.Y=4600.123mil|Location2.Y=4611.373mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1777.958mil|Location2.X=1789.208mil|Location1.Y=4600.123mil|Location2.Y=4611.373mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.15mm &lt; 0.254mm) Between Pad R2-2(20.828mm,-9.689mm) on Top Layer And Track (20.128mm,-11.714mm)(20.128mm,-9.114mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1780.91mil|Location2.X=1792.16mil|Location1.Y=4628.666mil|Location2.Y=4639.916mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1780.91mil|Location2.X=1792.16mil|Location1.Y=4628.666mil|Location2.Y=4639.916mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.15mm &lt; 0.254mm) Between Pad R2-2(20.828mm,-9.689mm) on Top Layer And Track (20.128mm,-9.114mm)(21.528mm,-9.114mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1819.296mil|Location2.X=1830.546mil|Location1.Y=4600.123mil|Location2.Y=4611.373mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1819.296mil|Location2.X=1830.546mil|Location1.Y=4600.123mil|Location2.Y=4611.373mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.15mm &lt; 0.254mm) Between Pad R2-2(20.828mm,-9.689mm) on Top Layer And Track (21.528mm,-11.714mm)(21.528mm,-9.114mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1924.926mil|Location2.X=1936.176mil|Location1.Y=4588.056mil|Location2.Y=4599.306mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1924.926mil|Location2.X=1936.176mil|Location1.Y=4588.056mil|Location2.Y=4599.306mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.254mm) Between Pad R3-1(24.036mm,-9.458mm) on Multi-Layer And Track (24.036mm,-12.183mm)(24.036mm,-10.483mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1924.926mil|Location2.X=1936.176mil|Location1.Y=4655.969mil|Location2.Y=4667.219mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1924.926mil|Location2.X=1936.176mil|Location1.Y=4655.969mil|Location2.Y=4667.219mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.254mm) Between Pad R3-1(24.036mm,-9.458mm) on Multi-Layer And Track (24.036mm,-8.433mm)(24.036mm,-6.958mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1924.926mil|Location2.X=1936.176mil|Location1.Y=4508.34mil|Location2.Y=4519.59mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1924.926mil|Location2.X=1936.176mil|Location1.Y=4508.34mil|Location2.Y=4519.59mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.254mm) Between Pad R3-2(24.036mm,-13.208mm) on Multi-Layer And Track (24.036mm,-12.183mm)(24.036mm,-10.483mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1924.926mil|Location2.X=1936.176mil|Location1.Y=4440.41mil|Location2.Y=4451.66mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1924.926mil|Location2.X=1936.176mil|Location1.Y=4440.41mil|Location2.Y=4451.66mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.254mm) Between Pad R3-2(24.036mm,-13.208mm) on Multi-Layer And Track (24.036mm,-15.933mm)(24.036mm,-14.233mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1924.926mil|Location2.X=1936.176mil|Location1.Y=4360.702mil|Location2.Y=4371.952mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1924.926mil|Location2.X=1936.176mil|Location1.Y=4360.702mil|Location2.Y=4371.952mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.254mm) Between Pad R3-3(24.036mm,-16.958mm) on Multi-Layer And Track (24.036mm,-15.933mm)(24.036mm,-14.233mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1924.926mil|Location2.X=1936.176mil|Location1.Y=4292.772mil|Location2.Y=4304.022mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1924.926mil|Location2.X=1936.176mil|Location1.Y=4292.772mil|Location2.Y=4304.022mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.254mm) Between Pad R3-3(24.036mm,-16.958mm) on Multi-Layer And Track (24.036mm,-19.458mm)(24.036mm,-17.983mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDFZKOIK1XD4L4KS2SNONFDDXZYLWGZDAK31CQDYGPCCIDB4YX5JIF"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Board Clearance Constraint (Gap=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=959.016mil|Location2.X=966.683mil|Location1.Y=4425.576mil|Location2.Y=4433.243mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=959.016mil|Location2.X=966.683mil|Location1.Y=4425.576mil|Location2.Y=4433.243mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.254mm) Between Board Edge And Track (-0.979mm,-14.493mm)(0.353mm,-14.493mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=941.875mil|Location2.X=949.542mil|Location1.Y=4620.576mil|Location2.Y=4628.243mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=941.875mil|Location2.X=949.542mil|Location1.Y=4620.576mil|Location2.Y=4628.243mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.254mm) Between Board Edge And Track (-0.979mm,-14.493mm)(-0.979mm,-4.587mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=959.016mil|Location2.X=966.683mil|Location1.Y=4815.576mil|Location2.Y=4823.243mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=959.016mil|Location2.X=966.683mil|Location1.Y=4815.576mil|Location2.Y=4823.243mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.254mm) Between Board Edge And Track (-0.979mm,-4.587mm)(0.353mm,-4.587mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=931.875mil|Location2.X=939.542mil|Location1.Y=4620.576mil|Location2.Y=4628.243mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=931.875mil|Location2.X=939.542mil|Location1.Y=4620.576mil|Location2.Y=4628.243mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.254mm) Between Board Edge And Track (-1.233mm,-15.382mm)(-1.233mm,-3.698mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=954.016mil|Location2.X=961.683mil|Location1.Y=4390.576mil|Location2.Y=4398.243mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=954.016mil|Location2.X=961.683mil|Location1.Y=4390.576mil|Location2.Y=4398.243mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.254mm) Between Board Edge And Track (-1.233mm,-15.382mm)(8.8mm,-15.382mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=954.016mil|Location2.X=961.683mil|Location1.Y=4850.576mil|Location2.Y=4858.243mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\UVEEC LED Cube.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=954.016mil|Location2.X=961.683mil|Location1.Y=4850.576mil|Location2.Y=4858.243mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.254mm) Between Board Edge And Track (-1.233mm,-3.698mm)(8.8mm,-3.698mm) on Top Overlay </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
