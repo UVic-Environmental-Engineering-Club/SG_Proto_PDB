@@ -116,6 +116,10 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=LXHFEXDM
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs for UVEEC LED Cube\Design Rule Check - UVEEC LED Cube.html
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
