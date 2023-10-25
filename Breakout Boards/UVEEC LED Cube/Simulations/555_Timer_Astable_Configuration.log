@@ -77,8 +77,8 @@ Changing Tseed to 1e-006
 Changing Tseed to 1e-010
 to 2e-010
 
-Date: Sun Oct 22 13:51:09 2023
-Total elapsed time: 0.613 seconds.
+Date: Tue Oct 24 18:08:25 2023
+Total elapsed time: 0.647 seconds.
 
 tnom = 27
 temp = 27
@@ -91,6 +91,6 @@ rejected = 676
 matrix size = 24
 fillins = 5
 solver = Normal
-Matrix Compiler1: 1.46 KB object code size  0.5/0.2/[0.1]
-Matrix Compiler2: off  [0.2]/0.2/0.3
+Matrix Compiler1: 1.46 KB object code size  0.3/0.2/[0.1]
+Matrix Compiler2: off  [0.2]/0.3/0.2
 
