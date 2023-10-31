@@ -1,0 +1,19 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: UVEEC LED Cube.PcbDoc   2023-10-30  4:01:38 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : UVEEC LED Cube-RoundHoles.TXT
+ASCII SlotHoles File : UVEEC LED Cube-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.3mm (12mil)                                             Round             6         PTH        30.78mm (1.21inch)
+T2      0.9mm (35mil)                                             Round             2         PTH        4.40mm (0.17inch)
+T3      1mm (39mil)                                               Round             3         PTH        7.50mm (0.30inch)
+T4      1.05mm (41mil)                                            Round             2         PTH        2.54mm (0.10inch)
+T5      2.7mm (106mil)                                            Slot              2         PTH        20.00mm (0.79inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              15
+
+Total Processing Time (hh:mm:ss) : 00:00:00
