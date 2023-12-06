@@ -1,0 +1,96 @@
+Circuit: * C:\Users\User\Desktop\Other\Projects\UVEEC\Seaglider\SG_Proto_PDB\Breakout Boards\UVEEC LED Cube\Simulations\555_Timer_Astable_Configuration.asc
+
+Warning: Multiple definitions of model "dled3" Type: Diode
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 0.995033
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+vernier = 0.00390625
+Gmin = 0.999816
+vernier = 0.00520833
+Gmin = 0.988174
+vernier = 0.00694444
+vernier = 0.00925925
+Gmin = 0.96894
+vernier = 0.0123457
+vernier = 0.0164609
+Gmin = 0.939056
+vernier = 0.0219478
+Gmin = 0.89392
+vernier = 0.0292638
+vernier = 0.0390184
+Gmin = 0.823078
+vernier = 0.0520245
+vernier = 0.0693659
+Gmin = 0.721778
+vernier = 0.0924879
+Gmin = 0.587451
+vernier = 0.123317
+vernier = 0.164423
+Gmin = 0.416747
+vernier = 0.21923
+vernier = 0.292307
+Gmin = 0.242427
+vernier = 0.389743
+Gmin = 0.104661
+vernier = 0.519657
+vernier = 0.692876
+Gmin = 0.0265457
+vernier = 0.923834
+vernier = 1
+Gmin = 0.00354777
+Gmin = 0.000380939
+Gmin = 4.0903e-005
+Gmin = 4.39193e-006
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 1.43915e-006
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+vernier = 0.00390625
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Could not converge to DC with sources off!
+Starting source stepping with srcstepmethod=1
+Could not converge to DC with sources off!
+Pseudo Transient failed in finding the operating point at 1.03495 s.
+Trouble finding operating point....skipping operating point for Transient analysis.
+Changing Tseed to 1e-007
+Changing Tseed to 1e-009
+Changing Tseed to 1e-006
+Changing Tseed to 1e-010
+to 2e-010
+
+Date: Tue Oct 24 18:08:25 2023
+Total elapsed time: 0.647 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 36537
+traniter = 27519
+tranpoints = 12327
+accept = 11795
+rejected = 676
+matrix size = 24
+fillins = 5
+solver = Normal
+Matrix Compiler1: 1.46 KB object code size  0.3/0.2/[0.1]
+Matrix Compiler2: off  [0.2]/0.3/0.2
+
