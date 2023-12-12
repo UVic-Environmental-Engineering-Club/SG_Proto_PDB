@@ -19,7 +19,7 @@ WINDOW 0 -10 -83 Bottom 2
 WINDOW 3 -6 68 Top 2
 SYMATTR Value ZXM61P03F
 SYMATTR Prefix X
-SYMATTR ModelFile C:\Users\User\Desktop\Other\Projects\UVEEC\RPE datasheets\ZXM61P03F.spice.txt
+SYMATTR ModelFile .\ZXM61P03F.spice.txt
 PIN 16 -64 RIGHT 8
 PINATTR PinName 3
 PINATTR SpiceOrder 1

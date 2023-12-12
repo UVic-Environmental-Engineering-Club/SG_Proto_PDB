@@ -17,7 +17,7 @@ WINDOW 0 -21 -55 Bottom 2
 WINDOW 3 8 72 Top 2
 SYMATTR Value ZXM61N03F
 SYMATTR Prefix X
-SYMATTR ModelFile C:\Users\User\Desktop\ZXM61N03F.spice.txt
+SYMATTR ModelFile .\ZXM61N03F.spice.txt
 PIN 32 -48 RIGHT 8
 PINATTR PinName 3
 PINATTR SpiceOrder 1
