@@ -1,0 +1,31 @@
+Version 4
+SymbolType BLOCK
+LINE Normal -26 -40 -26 -58
+LINE Normal -26 -4 -26 -22
+LINE Normal -26 32 -26 14
+LINE Normal -16 -13 -26 -13
+LINE Normal -16 -4 -16 -22
+LINE Normal 1 -13 -16 -4
+LINE Normal -16 -22 1 -13
+LINE Normal -38 32 -48 32
+LINE Normal -38 -48 -38 32
+LINE Normal 16 23 16 48
+LINE Normal 16 23 -26 23
+LINE Normal 16 -49 -26 -49
+LINE Normal 16 -64 16 -49
+LINE Normal 16 -13 16 23
+LINE Normal 1 -13 16 -13
+WINDOW 0 -10 -83 Bottom 2
+WINDOW 3 -6 68 Top 2
+SYMATTR Value ZXM61P03F
+SYMATTR Prefix X
+SYMATTR ModelFile .\ZXM61P03F.spice.txt
+PIN 16 -64 RIGHT 8
+PINATTR PinName 3
+PINATTR SpiceOrder 1
+PIN -48 32 RIGHT 8
+PINATTR PinName 4
+PINATTR SpiceOrder 2
+PIN 16 48 RIGHT 8
+PINATTR PinName 5
+PINATTR SpiceOrder 3
