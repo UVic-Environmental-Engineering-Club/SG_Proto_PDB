@@ -66,23 +66,6 @@ GenerateClassCluster=0
 DocumentUniqueId=ZRUZVUAL
 
 [Document2]
-DocumentPath=..\..\ProgramData\Altium\Altium Designer {39DC7D1C-CCE2-4322-B04F-E67B68D28E78}\VaultEditCache\75FB1845-9D1B-4DE3-80D0-8BA34165192A\Released\New Component.CmpLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document3]
 DocumentPath=Seaglider_Power_board_Schematic_Library.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -99,7 +82,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=VZPNGTHZ
 
-[Document4]
+[Document3]
 DocumentPath=Seaglider_Power_Board_PCB_Library.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -116,7 +99,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=URSEMLUQ
 
-[Document5]
+[Document4]
 DocumentPath=Seaglider_Power_Board_PCB.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -133,7 +116,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=LCVBCHTD
 
-[Document6]
+[Document5]
 DocumentPath=Power.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -150,7 +133,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=TRMKJJZC
 
-[Document7]
+[Document6]
 DocumentPath=Microcontroller.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -167,7 +150,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=YWWKHDJK
 
-[Document8]
+[Document7]
 DocumentPath=Sensors.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -184,7 +167,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=KPAUPYGC
 
-[Document9]
+[Document8]
 DocumentPath=Current Sensing.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -201,7 +184,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=JMEDEKOZ
 
-[Document10]
+[Document9]
 DocumentPath=SG_Proto_PDB.BomDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
