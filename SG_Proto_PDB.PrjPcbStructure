@@ -1,5 +1,5 @@
 Record=TopLevelDocument|FileName=Seaglider_Power_Board_Schematic.SchDoc|SheetNumber=1
-Record=SheetSymbol|SourceDocument=Seaglider_Power_Board_Schematic.SchDoc|Designator=U_Microcontroller|SchDesignator=U_Microcontroller|FileName=Microcontroller.SchDoc|SheetNumber=3|SymbolType=Normal|RawFileName=Microcontroller.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
-Record=SheetSymbol|SourceDocument=Seaglider_Power_Board_Schematic.SchDoc|Designator=U_Power|SchDesignator=U_Power|FileName=Power.SchDoc|SheetNumber=2|SymbolType=Normal|RawFileName=Power.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Seaglider_Power_Board_Schematic.SchDoc|Designator=U_Microcontroller|SchDesignator=U_Microcontroller|FileName=Microcontroller.SchDoc|SheetNumber=2|SymbolType=Normal|RawFileName=Microcontroller.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
 Record=NoMainPathDocument|SourceDocument=Seaglider_Power_Board_Schematic.SchDoc|FileName=Current Sensing.SchDoc|SheetNumber=4
 Record=NoMainPathDocument|SourceDocument=Seaglider_Power_Board_Schematic.SchDoc|FileName=Main_Megamind.SchDoc|SheetNumber=5
+Record=NoMainPathDocument|SourceDocument=Seaglider_Power_Board_Schematic.SchDoc|FileName=VBAT to 12V.SchDoc|SheetNumber=3
