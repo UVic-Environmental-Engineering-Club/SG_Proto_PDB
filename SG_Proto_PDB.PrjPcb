@@ -66,6 +66,23 @@ GenerateClassCluster=0
 DocumentUniqueId=ZRUZVUAL
 
 [Document2]
+DocumentPath=VBAT to 12V.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=TRMKJJZC
+
+[Document3]
 DocumentPath=Seaglider_Power_board_Schematic_Library.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -82,7 +99,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=VZPNGTHZ
 
-[Document3]
+[Document4]
 DocumentPath=Seaglider_Power_Board_PCB_Library.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -99,7 +116,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=URSEMLUQ
 
-[Document4]
+[Document5]
 DocumentPath=Seaglider_Power_Board_PCB.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -115,23 +132,6 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=LCVBCHTD
-
-[Document5]
-DocumentPath=Power.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=TRMKJJZC
 
 [Document6]
 DocumentPath=Microcontroller.SchDoc
