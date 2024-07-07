@@ -100,7 +100,7 @@ GenerateClassCluster=0
 DocumentUniqueId=URSEMLUQ
 
 [Document4]
-DocumentPath=Seaglider_Power_Board_PCB.PcbDoc
+DocumentPath=VBAT_to_12V.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
