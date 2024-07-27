@@ -1,0 +1,44 @@
+Change Component Footprint: Designator=CCM_SEL Old Footprint=61300211121 New Footprint=61300211121
+Change Component Footprint: Designator=DCM_SEL Old Footprint=61300211121 New Footprint=61300211121
+Change Component Footprint: Designator=J1 Old Footprint=691709710304 New Footprint=691709710304
+Change Component Footprint: Designator=Rs Old Footprint=FP-WSL3637-MFG New Footprint=FP-WSL3637-MFG
+Added Component: Designator=U1(PWP0028F_N)
+Add component (AddParameter): Name = "CompType"; Value = "IC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MountType"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "PWP0028F"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "LM5175PWP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Y"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "TYPE"; Value = "TYPE"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=EN Pin=U1-1
+Added Pin To Net: NetName=NetC_VIN_1 Pin=U1-2
+Added Pin To Net: NetName=VIN Pin=U1-3
+Added Pin To Net: NetName=NetC_DITH_2 Pin=U1-5
+Added Pin To Net: NetName=NetR_T_2 Pin=U1-6
+Added Pin To Net: NetName=NetC Slope_2 Pin=U1-7
+Added Pin To Net: NetName=NetCss_2 Pin=U1-8
+Added Pin To Net: NetName=NetRc1_2 Pin=U1-9
+Added Pin To Net: NetName=AGND Pin=U1-10
+Added Pin To Net: NetName=FB Pin=U1-11
+Added Pin To Net: NetName=VOUT Pin=U1-12
+Added Pin To Net: NetName=NetU1_13 Pin=U1-13
+Added Pin To Net: NetName=NetU1_13 Pin=U1-14
+Added Pin To Net: NetName=NetCcs_2 Pin=U1-15
+Added Pin To Net: NetName=NetCcs_1 Pin=U1-16
+Added Pin To Net: NetName=NetR_PGOOD_1 Pin=U1-17
+Added Pin To Net: NetName=NetC_BOOT2_2 Pin=U1-18
+Added Pin To Net: NetName=HDRV2 Pin=U1-19
+Added Pin To Net: NetName=NetC_BOOT2_1 Pin=U1-20
+Added Pin To Net: NetName=LDRV2 Pin=U1-21
+Added Pin To Net: NetName=AGND Pin=U1-22
+Added Pin To Net: NetName=NetCVCC_2 Pin=U1-23
+Added Pin To Net: NetName=VOUT Pin=U1-24
+Added Pin To Net: NetName=NetQ2_4 Pin=U1-25
+Added Pin To Net: NetName=NetC_BOOT1_2 Pin=U1-26
+Added Pin To Net: NetName=NetQ1_4 Pin=U1-27
+Added Pin To Net: NetName=SW1 Pin=U1-28
+Added Pin To Net: NetName=AGND Pin=U1-29
+Added Member To Class: ClassName=Boosty Member=Component U1 LM5175PWPR
+Added Room: Name=Boosty
