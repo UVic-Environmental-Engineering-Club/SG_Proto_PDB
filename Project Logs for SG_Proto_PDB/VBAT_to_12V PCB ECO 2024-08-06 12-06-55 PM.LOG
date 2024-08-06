@@ -1,0 +1,174 @@
+Change Component Designator: OldDesignator=TP1 NewDesignator=TP3
+Change Component Designator: OldDesignator=TP2 NewDesignator=TP4
+Change Component Designator: OldDesignator=TP3 NewDesignator=TP5
+Added Component: Designator=GH(Test_point1)
+Added Component: Designator=GL(Test_point1)
+Add Pin To Net: Unknown Pin: Pin *1-1
+Add Pin To Net: Unknown Pin: Pin *1-2
+Add Pin To Net: Unknown Pin: Pin C8-1
+Add Pin To Net: Unknown Pin: Pin C8-2
+Add Pin To Net: Unknown Pin: Pin C9-1
+Add Pin To Net: Unknown Pin: Pin C9-2
+Add Pin To Net: Unknown Pin: Pin C10-1
+Add Pin To Net: Unknown Pin: Pin C10-2
+Add Pin To Net: Unknown Pin: Pin C11-1
+Add Pin To Net: Unknown Pin: Pin C11-2
+Add Pin To Net: Unknown Pin: Pin C12-1
+Add Pin To Net: Unknown Pin: Pin C12-2
+Add Pin To Net: Unknown Pin: Pin C13-1
+Add Pin To Net: Unknown Pin: Pin C13-2
+Add Pin To Net: Unknown Pin: Pin C14-1
+Add Pin To Net: Unknown Pin: Pin C14-2
+Add Pin To Net: Unknown Pin: Pin C15-1
+Add Pin To Net: Unknown Pin: Pin C15-2
+Add Pin To Net: Unknown Pin: Pin C16-1
+Add Pin To Net: Unknown Pin: Pin C16-2
+Add Pin To Net: Unknown Pin: Pin D1-A
+Add Pin To Net: Unknown Pin: Pin D1-C
+Add Pin To Net: Unknown Pin: Pin I2-1
+Add Pin To Net: Unknown Pin: Pin I3-2
+Add Pin To Net: Unknown Pin: Pin J3-1
+Add Pin To Net: Unknown Pin: Pin J4-1
+Add Pin To Net: Unknown Pin: Pin J4-2
+Add Pin To Net: Unknown Pin: Pin J5-1
+Add Pin To Net: Unknown Pin: Pin J5-2
+Add Pin To Net: Unknown Pin: Pin J5-M1
+Add Pin To Net: Unknown Pin: Pin J5-M2
+Add Pin To Net: Unknown Pin: Pin J6-1
+Add Pin To Net: Unknown Pin: Pin J6-2
+Add Pin To Net: Unknown Pin: Pin J6-3
+Add Pin To Net: Unknown Pin: Pin J6-4
+Add Pin To Net: Unknown Pin: Pin J7-1
+Add Pin To Net: Unknown Pin: Pin J7-2
+Add Pin To Net: Unknown Pin: Pin J7-3
+Add Pin To Net: Unknown Pin: Pin J7-4
+Add Pin To Net: Unknown Pin: Pin J8-1
+Add Pin To Net: Unknown Pin: Pin J8-2
+Add Pin To Net: Unknown Pin: Pin J9-1
+Add Pin To Net: Unknown Pin: Pin J9-2
+Add Pin To Net: Unknown Pin: Pin J10-1
+Add Pin To Net: Unknown Pin: Pin J10-2
+Add Pin To Net: Unknown Pin: Pin L2-1
+Add Pin To Net: Unknown Pin: Pin L2-2
+Add Pin To Net: Unknown Pin: Pin R8-2
+Add Pin To Net: Unknown Pin: Pin R8-4
+Add Pin To Net: Unknown Pin: Pin R9-1
+Add Pin To Net: Unknown Pin: Pin R9-2
+Add Pin To Net: Unknown Pin: Pin R10-1
+Add Pin To Net: Unknown Pin: Pin R10-2
+Add Pin To Net: Unknown Pin: Pin R11-1
+Add Pin To Net: Unknown Pin: Pin R11-2
+Add Pin To Net: Unknown Pin: Pin R12-1
+Add Pin To Net: Unknown Pin: Pin R12-2
+Add Pin To Net: Unknown Pin: Pin R13-1
+Add Pin To Net: Unknown Pin: Pin R13-2
+Add Pin To Net: Unknown Pin: Pin TP6-1
+Add Pin To Net: Unknown Pin: Pin TP7-1
+Add Pin To Net: Unknown Pin: Pin TP8-1
+Add Pin To Net: Unknown Pin: Pin TP9-1
+Add Pin To Net: Unknown Pin: Pin TP10-1
+Add Pin To Net: Unknown Pin: Pin TP11-1
+Add Pin To Net: Unknown Pin: Pin TP12-1
+Add Pin To Net: Unknown Pin: Pin TP13-1
+Add Pin To Net: Unknown Pin: Pin U2-CN7_2
+Add Pin To Net: Unknown Pin: Pin U2-CN7_4
+Add Pin To Net: Unknown Pin: Pin U2-CN7_8
+Add Pin To Net: Unknown Pin: Pin U2-CN7_20
+Add Pin To Net: Unknown Pin: Pin U2-CN8_11
+Add Pin To Net: Unknown Pin: Pin U2-CN8_13
+Add Pin To Net: Unknown Pin: Pin U2-CN8_15
+Add Pin To Net: Unknown Pin: Pin U2-CN9_1
+Add Pin To Net: Unknown Pin: Pin U2-CN9_4
+Add Pin To Net: Unknown Pin: Pin U2-CN9_6
+Add Pin To Net: Unknown Pin: Pin U2-CN9_12
+Add Pin To Net: Unknown Pin: Pin U2-CN9_23
+Add Pin To Net: Unknown Pin: Pin U2-CN9_30
+Add Pin To Net: Unknown Pin: Pin U2-CN10_3
+Add Pin To Net: Unknown Pin: Pin U2-CN10_5
+Add Pin To Net: Unknown Pin: Pin U2-CN10_17
+Add Pin To Net: Unknown Pin: Pin U2-CN10_22
+Add Pin To Net: Unknown Pin: Pin U2-CN10_27
+Add Pin To Net: Unknown Pin: Pin U3-1
+Add Pin To Net: Unknown Pin: Pin U3-2
+Add Pin To Net: Unknown Pin: Pin U3-3
+Add Pin To Net: Unknown Pin: Pin U3-4
+Add Pin To Net: Unknown Pin: Pin U3-5
+Add Pin To Net: Unknown Pin: Pin U3-7
+Add Pin To Net: Unknown Pin: Pin U3-8
+Add Pin To Net: Unknown Pin: Pin U3-9
+Add Pin To Net: Unknown Pin: Pin U4-1
+Add Pin To Net: Unknown Pin: Pin U4-2
+Add Pin To Net: Unknown Pin: Pin U4-4
+Add Pin To Net: Unknown Pin: Pin U4-5
+Add Pin To Net: Unknown Pin: Pin U4-6
+Add Pin To Net: Unknown Pin: Pin U4-7
+Add Pin To Net: Unknown Pin: Pin U4-8
+Add Pin To Net: Unknown Pin: Pin U4-9
+Add Pin To Net: Unknown Pin: Pin U5-6
+Add Pin To Net: Unknown Pin: Pin U5-7
+Add Pin To Net: Unknown Pin: Pin U5-8
+Add Pin To Net: Unknown Pin: Pin U5-9
+Add Pin To Net: Unknown Pin: Pin U6-7
+Add Pin To Net: Unknown Pin: Pin U6-8
+Add Pin To Net: Unknown Pin: Pin U6-9
+Add Pin To Net: Unknown Pin: Pin U6-10
+Add Pin To Net: Unknown Pin: Pin U6-11
+Add Pin To Net: Unknown Pin: Pin U6-12
+Add Pin To Net: Unknown Pin: Pin U7-1
+Add Pin To Net: Unknown Pin: Pin U7-2
+Add Pin To Net: Unknown Pin: Pin U7-3
+Add Pin To Net: Unknown Pin: Pin U7-4
+Add Pin To Net: Unknown Pin: Pin U7-5
+Add Pin To Net: Unknown Pin: Pin U7-7
+Add Pin To Net: Unknown Pin: Pin U7-8
+Added Pin To Net: NetName=NetGH_1 Pin=GH-1
+Added Pin To Net: NetName=NetGH_1 Pin=U1-5
+Added Net: Name=NetGH_1
+Added Pin To Net: NetName=NetGL_1 Pin=GL-1
+Added Pin To Net: NetName=NetGL_1 Pin=U1-25
+Added Net: Name=NetGL_1
+Add Class Member: Failed to add class member : Component *1 BVS-AR002-1P0
+Add Class Member: Failed to add class member : Component C8 10u
+Add Class Member: Failed to add class member : Component C9 10u
+Add Class Member: Failed to add class member : Component C10 10u
+Add Class Member: Failed to add class member : Component C11 0.1uF
+Add Class Member: Failed to add class member : Component C12 22u
+Add Class Member: Failed to add class member : Component C13 22u
+Add Class Member: Failed to add class member : Component C14 1uF
+Add Class Member: Failed to add class member : Component C15 1uF
+Add Class Member: Failed to add class member : Component C16 220 pF
+Add Class Member: Failed to add class member : Component D1 SSB43L-E3/52T
+Added Member To Class: ClassName=VBAT to 12V Member=Component GH TP_1
+Added Member To Class: ClassName=VBAT to 12V Member=Component GL TP_1
+Add Class Member: Failed to add class member : Component I2 M20-9990246
+Add Class Member: Failed to add class member : Component I3 M20-9990246
+Add Class Member: Failed to add class member : Component J3 *FIT0588
+Add Class Member: Failed to add class member : Component J4 M20-9990246
+Add Class Member: Failed to add class member : Component J5 SM02B-GHS-TB
+Add Class Member: Failed to add class member : Component J6 PPTC041LFBN-RC
+Add Class Member: Failed to add class member : Component J7 Bar30-SENSOR
+Add Class Member: Failed to add class member : Component J8 282834-2
+Add Class Member: Failed to add class member : Component J9 0399200302
+Add Class Member: Failed to add class member : Component J10 0399200302
+Add Class Member: Failed to add class member : Component L2 6.8u
+Add Class Member: Failed to add class member : Component R8 Resistor Signal Switch
+Add Class Member: Failed to add class member : Component R9 10k
+Add Class Member: Failed to add class member : Component R10 10k
+Add Class Member: Failed to add class member : Component R11 10k
+Add Class Member: Failed to add class member : Component R12 10k
+Add Class Member: Failed to add class member : Component R13 10k
+Add Class Member: Failed to add class member : Component TP6 TP_1
+Add Class Member: Failed to add class member : Component TP7 TP_1
+Add Class Member: Failed to add class member : Component TP8 TP_1
+Add Class Member: Failed to add class member : Component TP9 TP_1
+Add Class Member: Failed to add class member : Component TP10 TP_1
+Add Class Member: Failed to add class member : Component TP11 TP_1
+Add Class Member: Failed to add class member : Component TP12 TP_1
+Add Class Member: Failed to add class member : Component TP13 TP_1
+Add Class Member: Failed to add class member : Component U2 NUCLEO-F446ZE
+Add Class Member: Failed to add class member : Component U3 ADP2303ARDZ-5.0-R7
+Add Class Member: Failed to add class member : Component U4 NCP186AMX330TAG
+Add Class Member: Failed to add class member : Component U5 EV3419A
+Add Class Member: Failed to add class member : Component U6 MIKROE-3449
+Add Class Member: Failed to add class member : Component U7 LT6100IMS8#PBF
+Added Room: Name=Current Sensing
