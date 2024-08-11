@@ -1,0 +1,32 @@
+Added Component: Designator=U(LM5175PWPR)
+Added Pin To Net: NetName=EN Pin=U-1
+Added Pin To Net: NetName=NetC_VIN_1 Pin=U-2
+Added Pin To Net: NetName=VIN Pin=U-3
+Added Pin To Net: NetName=NetC_DITH_2 Pin=U-5
+Added Pin To Net: NetName=NetR_T_2 Pin=U-6
+Added Pin To Net: NetName=NetC Slope_2 Pin=U-7
+Added Pin To Net: NetName=NetCss_2 Pin=U-8
+Added Pin To Net: NetName=NetRc1_2 Pin=U-9
+Added Pin To Net: NetName=AGND Pin=U-10
+Added Pin To Net: NetName=FB Pin=U-11
+Added Pin To Net: NetName=VOUT Pin=U-12
+Added Pin To Net: NetName=NetCcs_2 Pin=U-15
+Added Pin To Net: NetName=NetCcs_1 Pin=U-16
+Added Pin To Net: NetName=NetR_PGOOD_1 Pin=U-17
+Added Pin To Net: NetName=NetC_BOOT2_2 Pin=U-18
+Added Pin To Net: NetName=HDRV2 Pin=U-19
+Added Pin To Net: NetName=NetC_BOOT2_1 Pin=U-20
+Added Pin To Net: NetName=LDRV2 Pin=U-21
+Added Pin To Net: NetName=AGND Pin=U-22
+Added Pin To Net: NetName=NetCVCC_2 Pin=U-23
+Added Pin To Net: NetName=VOUT Pin=U-24
+Added Pin To Net: NetName=NetQ2_4 Pin=U-25
+Added Pin To Net: NetName=NetC_BOOT1_2 Pin=U-26
+Added Pin To Net: NetName=NetQ1_4 Pin=U-27
+Added Pin To Net: NetName=SW1 Pin=U-28
+Added Pin To Net: NetName=AGND Pin=U-29
+Added Pin To Net: NetName=NetU_13 Pin=U-13
+Added Pin To Net: NetName=NetU_13 Pin=U-14
+Added Net: Name=NetU_13
+Added Member To Class: ClassName=Boosty Member=Component U LM5175PWPR
+Added Room: Name=Boosty
