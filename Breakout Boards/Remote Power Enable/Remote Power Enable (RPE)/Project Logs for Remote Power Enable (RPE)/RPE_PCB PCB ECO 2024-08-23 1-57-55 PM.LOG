@@ -1,0 +1,26 @@
+Change Footprint: Cannot match pads with new footprint in component :J3 Footprint:9-103323-0-04
+Change Footprint: Cannot match pads with new footprint in component :J5 Footprint:691137710002
+Change Footprint: Cannot match pads with new footprint in component :J2 Footprint:FIT0588
+Added Component: Designator=J1(FIT0588)
+Add component (AddParameter): Name = "Category"; Value = "LDO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://media.digikey.com/pdf/Data%20Sheets/DFRobot%20PDFs/FIT0588_Web.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://media.digikey.com/pdf/Data%20Sheets/DFRobot%20PDFs/FIT0588_Web.pdf?src-supplier=Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "DFRobot"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "FIT0588"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing"; Value = "1=3.9 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock"; Value = "1280"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "1738-1438-ND"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetF1_2 Pin=J1-1
+Added Pin To Net: NetName=GND Pin=J1-2
+Added Pin To Net: NetName=GND Pin=J1-2
+Add Pin To Net: Unknown Pin: Pin K1-1
+Add Pin To Net: Unknown Pin: Pin K1-2
+Add Pin To Net: Unknown Pin: Pin K1-3
+Add Pin To Net: Unknown Pin: Pin K1-4
+Add Pin To Net: Unknown Pin: Pin K2-1
+Add Pin To Net: Unknown Pin: Pin K2-2
+Add Pin To Net: Unknown Pin: Pin K2-3
+Add Pin To Net: Unknown Pin: Pin K2-4
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component J1 FIT0588

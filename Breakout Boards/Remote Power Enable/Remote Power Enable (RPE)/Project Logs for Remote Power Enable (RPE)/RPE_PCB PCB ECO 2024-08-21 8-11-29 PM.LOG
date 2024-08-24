@@ -1,0 +1,28 @@
+Removed Pin From Net: NetName=GND Pin=K1-
+Removed Pin From Net: NetName=GND Pin=K1-
+Removed Pin From Net: NetName=GND Pin=K1-
+Removed Pin From Net: NetName=GND Pin=K1-
+Removed Pin From Net: NetName=NetJ2_2 Pin=K2-
+Removed Pin From Net: NetName=NetJ2_2 Pin=K2-
+Removed Pin From Net: NetName=NetJ2_2 Pin=K2-
+Removed Pin From Net: NetName=NetJ2_2 Pin=K2-
+Change Footprint: Cannot match pads with new footprint in component :J1 Footprint:FIT0588
+Change Footprint: Cannot match pads with new footprint in component :J2 Footprint:FIT0588
+Change Component Comment : Designator=J1 Old Comment=* New Comment=FIT0588
+Change Component Comment : Designator=J2 Old Comment=*FIT0588 New Comment=FIT0588
+Added Component: Designator=J(PREC002SAAN-RC)
+Add Pin To Net: Unknown Pin: Pin K1-2
+Add Pin To Net: Unknown Pin: Pin K1-4
+Add Pin To Net: Unknown Pin: Pin K2-1
+Add Pin To Net: Unknown Pin: Pin K2-2
+Add Pin To Net: Unknown Pin: Pin K2-4
+Change Net Name : Old Net Name=NetK1 New Net Name=NetK1_2
+Added Pin To Net: NetName=NetJ_1 Pin=J-1
+Added Pin To Net: NetName=NetJ_1 Pin=U4-J16
+Added Net: Name=NetJ_1
+Added Pin To Net: NetName=NetJ_2 Pin=J-2
+Added Pin To Net: NetName=NetJ_2 Pin=U4-J15
+Added Net: Name=NetJ_2
+Added Pin To Net: NetName=NetK1_1 Pin=M2-2
+Added Net: Name=NetK1_1
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component J PREC002SAAN-RC

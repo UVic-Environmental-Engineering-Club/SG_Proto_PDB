@@ -1,0 +1,8 @@
+Added Pin To Net: NetName=NetK1_1 Pin=K1-1
+Added Pin To Net: NetName=NetK1_2 Pin=K1-2
+Added Pin To Net: NetName=NetK1_1 Pin=K1-3
+Added Pin To Net: NetName=GND Pin=K1-4
+Added Pin To Net: NetName=14V6 Pin=K2-1
+Added Pin To Net: NetName=NetJ2_2 Pin=K2-2
+Added Pin To Net: NetName=NetK1_1 Pin=K2-3
+Added Pin To Net: NetName=GND Pin=K2-4

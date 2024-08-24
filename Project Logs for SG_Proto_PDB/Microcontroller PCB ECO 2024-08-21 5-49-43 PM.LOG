@@ -1,0 +1,153 @@
+Added Component: Designator=J12(Header 2.54mm)
+Add component (AddParameter): Name = "Category"; Value = "Connectors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Color"; Value = "Black"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://datasheet.ciiva.com/740/zrzczzzszzn-rc-st-11635-b-740843.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://datasheet.ciiva.com/740/zrzczzzszzn-rc-st-11635-b-740843.pdf?src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Mating Length"; Value = "0.23inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Plating"; Value = "Tin"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Type"; Value = "Male Pin"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Sullins"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "PREC002SAAN-RC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "Through Hole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Positions"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Rows"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "0.1inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing"; Value = "1=0.06, 10=0.056, 25=0.0416, 50=0.0356, 100=0.0345, 250=0.02972, 500=0.02852 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock"; Value = "23153"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "S1012EC-02-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "Solder"; VariantName = "[No Variations]"
+Add Pin To Net: Unknown Pin: Pin *1-1
+Add Pin To Net: Unknown Pin: Pin *1-2
+Add Pin To Net: Unknown Pin: Pin C1-1
+Add Pin To Net: Unknown Pin: Pin C1-2
+Add Pin To Net: Unknown Pin: Pin C2-1
+Add Pin To Net: Unknown Pin: Pin C2-2
+Add Pin To Net: Unknown Pin: Pin C3-1
+Add Pin To Net: Unknown Pin: Pin C3-2
+Add Pin To Net: Unknown Pin: Pin C4-1
+Add Pin To Net: Unknown Pin: Pin C4-2
+Add Pin To Net: Unknown Pin: Pin C5-1
+Add Pin To Net: Unknown Pin: Pin C5-2
+Add Pin To Net: Unknown Pin: Pin C6-1
+Add Pin To Net: Unknown Pin: Pin C6-2
+Add Pin To Net: Unknown Pin: Pin C7-1
+Add Pin To Net: Unknown Pin: Pin C7-2
+Add Pin To Net: Unknown Pin: Pin C16-1
+Add Pin To Net: Unknown Pin: Pin C16-2
+Add Pin To Net: Unknown Pin: Pin GH1-1
+Add Pin To Net: Unknown Pin: Pin GL1-1
+Add Pin To Net: Unknown Pin: Pin I1-1
+Add Pin To Net: Unknown Pin: Pin I1-2
+Add Pin To Net: Unknown Pin: Pin I4-2
+Add Pin To Net: Unknown Pin: Pin J1-1
+Add Pin To Net: Unknown Pin: Pin J1-2
+Add Pin To Net: Unknown Pin: Pin J2-1
+Add Pin To Net: Unknown Pin: Pin J2-2
+Add Pin To Net: Unknown Pin: Pin J9-1
+Add Pin To Net: Unknown Pin: Pin J9-2
+Add Pin To Net: Unknown Pin: Pin J10-1
+Add Pin To Net: Unknown Pin: Pin J10-2
+Add Pin To Net: Unknown Pin: Pin J11-1
+Add Pin To Net: Unknown Pin: Pin J11-2
+Add Pin To Net: Unknown Pin: Pin L1-1
+Add Pin To Net: Unknown Pin: Pin L1-2
+Add Pin To Net: Unknown Pin: Pin R1-1
+Add Pin To Net: Unknown Pin: Pin R1-2
+Add Pin To Net: Unknown Pin: Pin R2-1
+Add Pin To Net: Unknown Pin: Pin R2-2
+Add Pin To Net: Unknown Pin: Pin R3-1
+Add Pin To Net: Unknown Pin: Pin R3-2
+Add Pin To Net: Unknown Pin: Pin R4-1
+Add Pin To Net: Unknown Pin: Pin R4-2
+Add Pin To Net: Unknown Pin: Pin R5-1
+Add Pin To Net: Unknown Pin: Pin R5-2
+Add Pin To Net: Unknown Pin: Pin R6-1
+Add Pin To Net: Unknown Pin: Pin R6-2
+Add Pin To Net: Unknown Pin: Pin R7-1
+Add Pin To Net: Unknown Pin: Pin R7-2
+Add Pin To Net: Unknown Pin: Pin TP1-1
+Add Pin To Net: Unknown Pin: Pin TP2-1
+Add Pin To Net: Unknown Pin: Pin TP3-1
+Add Pin To Net: Unknown Pin: Pin TP8-1
+Add Pin To Net: Unknown Pin: Pin TP9-1
+Add Pin To Net: Unknown Pin: Pin TP10-1
+Add Pin To Net: Unknown Pin: Pin TP11-1
+Add Pin To Net: Unknown Pin: Pin U1-1_3_34
+Add Pin To Net: Unknown Pin: Pin U1-4
+Add Pin To Net: Unknown Pin: Pin U1-5
+Add Pin To Net: Unknown Pin: Pin U1-6
+Add Pin To Net: Unknown Pin: Pin U1-7
+Add Pin To Net: Unknown Pin: Pin U1-11
+Add Pin To Net: Unknown Pin: Pin U1-12
+Add Pin To Net: Unknown Pin: Pin U1-13
+Add Pin To Net: Unknown Pin: Pin U1-14
+Add Pin To Net: Unknown Pin: Pin U1-15
+Add Pin To Net: Unknown Pin: Pin U1-16
+Add Pin To Net: Unknown Pin: Pin U1-17
+Add Pin To Net: Unknown Pin: Pin U1-19
+Add Pin To Net: Unknown Pin: Pin U1-20
+Add Pin To Net: Unknown Pin: Pin U1-21
+Add Pin To Net: Unknown Pin: Pin U1-22
+Add Pin To Net: Unknown Pin: Pin U1-23
+Add Pin To Net: Unknown Pin: Pin U1-24
+Add Pin To Net: Unknown Pin: Pin U1-25
+Add Pin To Net: Unknown Pin: Pin U1-26_31
+Add Pin To Net: Unknown Pin: Pin U1-32_33
+Add Pin To Net: Unknown Pin: Pin U7-1
+Add Pin To Net: Unknown Pin: Pin U7-2
+Add Pin To Net: Unknown Pin: Pin U7-3
+Add Pin To Net: Unknown Pin: Pin U7-4
+Add Pin To Net: Unknown Pin: Pin U7-5
+Add Pin To Net: Unknown Pin: Pin U7-7
+Add Pin To Net: Unknown Pin: Pin U7-8
+Added Pin To Net: NetName=NetJ12_1 Pin=J12-1
+Added Pin To Net: NetName=NetJ12_1 Pin=U2-CN8_16
+Added Net: Name=NetJ12_1
+Added Pin To Net: NetName=NetJ12_2 Pin=J12-2
+Added Pin To Net: NetName=NetJ12_2 Pin=U2-CN8_14
+Added Net: Name=NetJ12_2
+Add Class Member: Failed to add class member : Component *1 BVS-AR002-1P0
+Add Class Member: Failed to add class member : Component C1 4.7µF
+Add Class Member: Failed to add class member : Component C2 1 µF
+Add Class Member: Failed to add class member : Component C3 0.1 µF
+Add Class Member: Failed to add class member : Component C4 0.1 µF
+Add Class Member: Failed to add class member : Component C5 875075655006
+Add Class Member: Failed to add class member : Component C6 0.1 µF
+Add Class Member: Failed to add class member : Component C7 TMK325B7226MM-TR
+Add Class Member: Failed to add class member : Component C16 220 pF
+Add Class Member: Failed to add class member : Component GH1 TP_1
+Add Class Member: Failed to add class member : Component GL1 TP_1
+Add Class Member: Failed to add class member : Component I1 M20-9990246
+Add Class Member: Failed to add class member : Component I4 M20-9990246
+Add Class Member: Failed to add class member : Component J1 0399200302
+Add Class Member: Failed to add class member : Component J2 0399200302
+Add Class Member: Failed to add class member : Component J9 282834-2
+Add Class Member: Failed to add class member : Component J10 0399200302
+Add Class Member: Failed to add class member : Component J11 0399200302
+Added Member To Class: ClassName=Microcontroller Member=Component J12 PREC002SAAN-RC
+Add Class Member: Failed to add class member : Component L1 IHLP6767GZERR47M51
+Add Class Member: Failed to add class member : Component R1 100 kOhms
+Add Class Member: Failed to add class member : Component R2 562 kOhms
+Add Class Member: Failed to add class member : Component R3 3.3 Ohms
+Add Class Member: Failed to add class member : Component R4 11 kOhms
+Add Class Member: Failed to add class member : Component R5 309 kOhms
+Add Class Member: Failed to add class member : Component R6 2.87 kOhms
+Add Class Member: Failed to add class member : Component R7 3.48 kOhms
+Added Member To Class: ClassName=Microcontroller Member=Component R9 10k
+Added Member To Class: ClassName=Microcontroller Member=Component R10 Resistor Signal Switch
+Add Class Member: Failed to add class member : Component TP1 TP_1
+Add Class Member: Failed to add class member : Component TP2 TP_1
+Add Class Member: Failed to add class member : Component TP3 TP_1
+Add Class Member: Failed to add class member : Component TP8 TP_1
+Add Class Member: Failed to add class member : Component TP9 TP_1
+Add Class Member: Failed to add class member : Component TP10 TP_1
+Add Class Member: Failed to add class member : Component TP11 TP_1
+Add Class Member: Failed to add class member : Component U1 SIC450ED-T1-GE3
+Add Class Member: Failed to add class member : Component U7 LT6100IMS8#PBF
+Added Room: Name=Current Sensing
