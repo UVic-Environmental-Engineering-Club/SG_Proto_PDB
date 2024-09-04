@@ -1,0 +1,137 @@
+# Created by Ultra Librarian 8.3.353 Copyright © 1999-2024
+# Frank Frank, Accelerated Designs
+
+StartFootprints
+
+Footprint (Name "DA14531MOD_REN")
+Pad (Name "J1") (Location -244.4, 39.5) (Surface True) (Rotation 0) (ExpandMask 0) (ExpandPaste 0)
+PadShape (Size 43, 39) (Shape Rectangular) (Layer Top)
+EndPad
+Pad (Name "J2") (Location -226.4, -19.6) (Surface True) (Rotation 0) (ExpandMask 0) (ExpandPaste 0)
+PadShape (Size 79, 39) (Shape Rectangular) (Layer Top)
+EndPad
+Pad (Name "J3") (Location -226.4, -78.7) (Surface True) (Rotation 0) (ExpandMask 0) (ExpandPaste 0)
+PadShape (Size 79, 39) (Shape Rectangular) (Layer Top)
+EndPad
+Pad (Name "J4") (Location -226.4, -137.8) (Surface True) (Rotation 0) (ExpandMask 0) (ExpandPaste 0)
+PadShape (Size 79, 39) (Shape Rectangular) (Layer Top)
+EndPad
+Pad (Name "J5") (Location -226.4, -196.9) (Surface True) (Rotation 0) (ExpandMask 0) (ExpandPaste 0)
+PadShape (Size 79, 39) (Shape Rectangular) (Layer Top)
+EndPad
+Pad (Name "J6") (Location -147.75, -265.748) (Surface True) (Rotation 90) (ExpandMask 0) (ExpandPaste 0)
+PadShape (Size 79, 39) (Shape Rectangular) (Layer Top)
+EndPad
+Pad (Name "J7") (Location -88.65, -265.748) (Surface True) (Rotation 90) (ExpandMask 0) (ExpandPaste 0)
+PadShape (Size 79, 39) (Shape Rectangular) (Layer Top)
+EndPad
+Pad (Name "J8") (Location -29.55, -265.748) (Surface True) (Rotation 90) (ExpandMask 0) (ExpandPaste 0)
+PadShape (Size 79, 39) (Shape Rectangular) (Layer Top)
+EndPad
+Pad (Name "J9") (Location 29.55, -265.748) (Surface True) (Rotation 90) (ExpandMask 0) (ExpandPaste 0)
+PadShape (Size 79, 39) (Shape Rectangular) (Layer Top)
+EndPad
+Pad (Name "J10") (Location 88.65, -265.748) (Surface True) (Rotation 90) (ExpandMask 0) (ExpandPaste 0)
+PadShape (Size 79, 39) (Shape Rectangular) (Layer Top)
+EndPad
+Pad (Name "J11") (Location 147.75, -265.748) (Surface True) (Rotation 90) (ExpandMask 0) (ExpandPaste 0)
+PadShape (Size 79, 39) (Shape Rectangular) (Layer Top)
+EndPad
+Pad (Name "J12") (Location 226.4, -196.9) (Surface True) (Rotation 180) (ExpandMask 0) (ExpandPaste 0)
+PadShape (Size 79, 39) (Shape Rectangular) (Layer Top)
+EndPad
+Pad (Name "J13") (Location 226.4, -137.8) (Surface True) (Rotation 180) (ExpandMask 0) (ExpandPaste 0)
+PadShape (Size 79, 39) (Shape Rectangular) (Layer Top)
+EndPad
+Pad (Name "J14") (Location 226.4, -78.7) (Surface True) (Rotation 180) (ExpandMask 0) (ExpandPaste 0)
+PadShape (Size 79, 39) (Shape Rectangular) (Layer Top)
+EndPad
+Pad (Name "J15") (Location 226.4, -19.6) (Surface True) (Rotation 180) (ExpandMask 0) (ExpandPaste 0)
+PadShape (Size 79, 39) (Shape Rectangular) (Layer Top)
+EndPad
+Pad (Name "J16") (Location 226.4, 39.5) (Surface True) (Rotation 180) (ExpandMask 0) (ExpandPaste 0)
+PadShape (Size 79, 39) (Shape Rectangular) (Layer Top)
+EndPad
+Line (Width 1) (Start 246, 285.5) (End -246, 285.5) (Layer Mechanical13) 
+Line (Width 1) (Start -246, -285.5) (End 246, -285.5) (Layer Mechanical13) 
+Line (Width 1) (Start 246, -285.5) (End 246, 285.5) (Layer Mechanical13) 
+Line (Width 1) (Start -246, 285.5) (End -246, -285.5) (Layer Mechanical13) 
+Text (Location -192.3999939, 14.49999695) (Height 50) (Width 3) (Rotation 0) (Layer Mechanical13) (Value "*")
+Polygon (PointCount 4) (Layer KeepOutLayer) 
+Point (-246, 114.5)
+Point (246, 114.5)
+Point (246, 285.5)
+Point (-246, 285.5)
+EndPolygon
+Line (Width 6) (Start -251, 290.5) (End -251, 72.10000038) (Layer TopOverlay) 
+Line (Width 6) (Start -251, -290.5) (End -180.35000038, -290.5) (Layer TopOverlay) 
+Line (Width 6) (Start 251, -290.5) (End 251, -229.50000038) (Layer TopOverlay) 
+Line (Width 6) (Start 251, 290.5) (End -251, 290.5) (Layer TopOverlay) 
+Line (Width 6) (Start -251, -229.50000038) (End -251, -290.5) (Layer TopOverlay) 
+Line (Width 6) (Start 180.35000038, -290.5) (End 251, -290.5) (Layer TopOverlay) 
+Line (Width 6) (Start 251, 72.10000038) (End 251, 290.5) (Layer TopOverlay) 
+Text (Location -285.3999939, 14.49999695) (Height 50) (Width 3) (Rotation 0) (Layer TopOverlay) (Value "*")
+Line (Width 6) (Start -256, 295.5) (End -256, 69) (Layer Mechanical15) 
+Line (Width 6) (Start -256, 69) (End -275.9, 69) (Layer Mechanical15) 
+Line (Width 6) (Start -275.9, 69) (End -275.9, -226.4) (Layer Mechanical15) 
+Line (Width 6) (Start -275.9, -226.4) (End -256, -226.4) (Layer Mechanical15) 
+Line (Width 6) (Start -256, -226.4) (End -256, -295.5) (Layer Mechanical15) 
+Line (Width 6) (Start -256, -295.5) (End -177.25, -295.5) (Layer Mechanical15) 
+Line (Width 6) (Start -177.25, -295.5) (End -177.25, -315.248) (Layer Mechanical15) 
+Line (Width 6) (Start -177.25, -315.248) (End 177.25, -315.248) (Layer Mechanical15) 
+Line (Width 6) (Start 177.25, -315.248) (End 177.25, -295.5) (Layer Mechanical15) 
+Line (Width 6) (Start 177.25, -295.5) (End 256, -295.5) (Layer Mechanical15) 
+Line (Width 6) (Start 256, -295.5) (End 256, -226.4) (Layer Mechanical15) 
+Line (Width 6) (Start 256, -226.4) (End 275.9, -226.4) (Layer Mechanical15) 
+Line (Width 6) (Start 275.9, -226.4) (End 275.9, 69) (Layer Mechanical15) 
+Line (Width 6) (Start 275.9, 69) (End 256, 69) (Layer Mechanical15) 
+Line (Width 6) (Start 256, 69) (End 256, 295.5) (Layer Mechanical15) 
+Line (Width 6) (Start 256, 295.5) (End -256, 295.5) (Layer Mechanical15) 
+Polygon (PointCount 16) (Layer Mechanical15) 
+Point (-256, 69)
+Point (-275.9, 69)
+Point (-275.9, -226.4)
+Point (-256, -226.4)
+Point (-256, -295.5)
+Point (-177.25, -295.5)
+Point (-177.25, -315.248)
+Point (177.25, -315.248)
+Point (177.25, -295.5)
+Point (256, -295.5)
+Point (256, -226.4)
+Point (275.9, -226.4)
+Point (275.9, 69)
+Point (256, 69)
+Point (256, 295.5)
+Point (-256, 295.5)
+EndPolygon
+EndFootprint
+EndFootprints
+
+StartComponents
+
+Component (Name "DA14531MOD-00F01002") (PartCount 1) (DesPrefix "U?")
+Pin (Location 300, 0) (Rotation 180) (PinType Passive) (Length 300) (Width 0) (Designator Visible "J1") (Name Visible "NC") (PinSwap 0) (PartSwap 0) (PinSeq 1) (Part 1)
+Pin (Location 300, -100) (Rotation 180) (PinType Power) (Length 300) (Width 0) (Designator Visible "J2") (Name Visible "GND") (PinSwap 0) (PartSwap 0) (PinSeq 2) (Part 1)
+Pin (Location 300, -200) (Rotation 180) (PinType Power) (Length 300) (Width 0) (Designator Visible "J3") (Name Visible "GND") (PinSwap 0) (PartSwap 0) (PinSeq 3) (Part 1)
+Pin (Location 300, -300) (Rotation 180) (PinType Power) (Length 300) (Width 0) (Designator Visible "J4") (Name Visible "GND") (PinSwap 0) (PartSwap 0) (PinSeq 4) (Part 1)
+Pin (Location 300, -400) (Rotation 180) (PinType IO) (Length 300) (Width 0) (Designator Visible "J5") (Name Visible "P0_6") (PinSwap 0) (PartSwap 0) (PinSeq 5) (Part 1)
+Pin (Location 300, -500) (Rotation 180) (PinType Power) (Length 300) (Width 0) (Designator Visible "J6") (Name Visible "GND") (PinSwap 0) (PartSwap 0) (PinSeq 6) (Part 1)
+Pin (Location 300, -600) (Rotation 180) (PinType Power) (Length 300) (Width 0) (Designator Visible "J7") (Name Visible "VBAT") (PinSwap 0) (PartSwap 0) (PinSeq 7) (Part 1)
+Pin (Location 300, -700) (Rotation 180) (PinType IO) (Length 300) (Width 0) (Designator Visible "J8") (Name Visible "P0_11") (PinSwap 0) (PartSwap 0) (PinSeq 8) (Part 1)
+Pin (Location 1900, -700) (Rotation 0) (PinType IO) (Length 300) (Width 0) (Designator Visible "J9") (Name Visible "P0_10/SWDIO") (PinSwap 0) (PartSwap 0) (PinSeq 9) (Part 1)
+Pin (Location 1900, -600) (Rotation 0) (PinType IO) (Length 300) (Width 0) (Designator Visible "J10") (Name Visible "P0_2/SWCLK") (PinSwap 0) (PartSwap 0) (PinSeq 10) (Part 1)
+Pin (Location 1900, -500) (Rotation 0) (PinType Power) (Length 300) (Width 0) (Designator Visible "J11") (Name Visible "GND") (PinSwap 0) (PartSwap 0) (PinSeq 11) (Part 1)
+Pin (Location 1900, -400) (Rotation 0) (PinType IO) (Length 300) (Width 0) (Designator Visible "J12") (Name Visible "P0_0/RST") (PinSwap 0) (PartSwap 0) (PinSeq 12) (Part 1)
+Pin (Location 1900, -300) (Rotation 0) (PinType IO) (Length 300) (Width 0) (Designator Visible "J13") (Name Visible "P0_7") (PinSwap 0) (PartSwap 0) (PinSeq 13) (Part 1)
+Pin (Location 1900, -200) (Rotation 0) (PinType IO) (Length 300) (Width 0) (Designator Visible "J14") (Name Visible "P0_5") (PinSwap 0) (PartSwap 0) (PinSeq 14) (Part 1)
+Pin (Location 1900, -100) (Rotation 0) (PinType IO) (Length 300) (Width 0) (Designator Visible "J15") (Name Visible "P0_9") (PinSwap 0) (PartSwap 0) (PinSeq 15) (Part 1)
+Pin (Location 1900, 0) (Rotation 0) (PinType IO) (Length 300) (Width 0) (Designator Visible "J16") (Name Visible "P0_8") (PinSwap 0) (PartSwap 0) (PinSeq 16) (Part 1)
+Rectangle (Width 5) (Start 300, -900) (End 1900, 200) (Part 1)
+Parameter (Name "Mfr_Name") (Location 0, 0) (Height 50) (Rotation 0) (Justification Center) (Value "Renesas Electronics") (Part 1)
+Parameter (Name "RefDes") (Location 1100, 400) (Height 82) (Rotation 0) (Justification Center) (Value "RefDes") (Part 1)
+Parameter (Name "Type") (Location 1100, 300) (Height 82) (Rotation 0) (Justification Center) (Value "Type") (Part 1)
+Description (Value "No Description Available") (Part 1)
+Footprint (Name "DA14531MOD_REN")
+EndComponent
+EndComponents

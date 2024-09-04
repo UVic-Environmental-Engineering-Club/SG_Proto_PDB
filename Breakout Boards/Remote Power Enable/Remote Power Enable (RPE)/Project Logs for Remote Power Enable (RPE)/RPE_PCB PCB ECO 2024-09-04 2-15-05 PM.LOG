@@ -1,0 +1,51 @@
+Removed Pin From Net: NetName=NetK1_2 Pin=M1-2
+Removed Pin From Net: NetName=14V6 Pin=M1-3
+Removed Pin From Net: NetName=NetK1_1 Pin=M2-2
+Removed Pin From Net: NetName=NetK1_2 Pin=M2-3
+Removed Pin From Net: NetName=NetD4_+ Pin=P1-2
+Removed Pin From Net: NetName=3V3 Pin=P1-3
+Removed Pin From Net: NetName=NetD5_+ Pin=P2-2
+Removed Pin From Net: NetName=3V3 Pin=P2-3
+Removed Pin From Net: NetName=GND Pin=Q1-2
+Removed Pin From Net: NetName=GND Pin=Q2-2
+Change Footprint: Cannot match pads with new footprint in component :J1 Footprint:FIT0588
+Change Footprint: Cannot match pads with new footprint in component :J2 Footprint:FIT0588
+Change Component Footprint: Designator=Q1 Old Footprint= New Footprint=MMBT4401-13-F
+Change Component Footprint: Designator=Q2 Old Footprint= New Footprint=MMBT4401-13-F
+Change Component Footprint: Designator=M1 Old Footprint= New Footprint=ZXM61N03FTA
+Change Component Footprint: Designator=M2 Old Footprint= New Footprint=ZXM61P03FTA
+Change Component Footprint: Designator=U4 Old Footprint=DA14531MOD-00F01002 New Footprint=DA14531MOD_REN
+Change Component Comment : Designator=Q1 Old Comment=* New Comment=MMBT4401-7-F
+Change Component Comment : Designator=Q2 Old Comment=* New Comment=MMBT4401-7-F
+Change Component Comment : Designator=M1 Old Comment= New Comment=ZXM61N03FTA
+Change Component Comment : Designator=M2 Old Comment= New Comment=ZXM61P03FTA
+Added Pin To Net: NetName=GND Pin=J4-Shell_1
+Added Pin To Net: NetName=GND Pin=J4-Shell_2
+Added Pin To Net: NetName=GND Pin=J4-Shell_3
+Added Pin To Net: NetName=GND Pin=J4-Shell_4
+Added Pin To Net: NetName=14V6 Pin=M1-D
+Added Pin To Net: NetName=NetK1_2 Pin=M1-S
+Added Pin To Net: NetName=NetK1_2 Pin=M2-D
+Added Pin To Net: NetName=NetK1_1 Pin=M2-S
+Added Pin To Net: NetName=3V3 Pin=P1-2
+Added Pin To Net: NetName=NetD4_+ Pin=P1-3
+Added Pin To Net: NetName=3V3 Pin=P2-2
+Added Pin To Net: NetName=NetD5_+ Pin=P2-3
+Added Pin To Net: NetName=GND Pin=Q1-E
+Added Pin To Net: NetName=GND Pin=Q2-E
+Added Pin To Net: NetName=NetM1_G Pin=M1-G
+Added Pin To Net: NetName=NetM1_G Pin=Q1-C
+Added Pin To Net: NetName=NetM1_G Pin=R1-1
+Added Net: Name=NetM1_G
+Added Pin To Net: NetName=NetM2_G Pin=M2-G
+Added Pin To Net: NetName=NetM2_G Pin=Q2-C
+Added Pin To Net: NetName=NetM2_G Pin=R5-1
+Added Net: Name=NetM2_G
+Added Pin To Net: NetName=NetQ1_B Pin=Q1-B
+Added Pin To Net: NetName=NetQ1_B Pin=R3-2
+Added Pin To Net: NetName=NetQ1_B Pin=R13-2
+Added Net: Name=NetQ1_B
+Added Pin To Net: NetName=NetQ2_B Pin=Q2-B
+Added Pin To Net: NetName=NetQ2_B Pin=R7-2
+Added Pin To Net: NetName=NetQ2_B Pin=R14-2
+Added Net: Name=NetQ2_B
