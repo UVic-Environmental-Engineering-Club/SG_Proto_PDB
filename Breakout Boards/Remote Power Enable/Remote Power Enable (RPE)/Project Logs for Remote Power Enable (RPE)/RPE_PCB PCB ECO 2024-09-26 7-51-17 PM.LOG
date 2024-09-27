@@ -1,0 +1,53 @@
+Change Footprint: Cannot match pads with new footprint in component :J1 Footprint:FIT0588
+Change Footprint: Cannot match pads with new footprint in component :J2 Footprint:FIT0588
+Change Component Designator: OldDesignator=C1 NewDesignator=C3
+Change Component Designator: OldDesignator=C2 NewDesignator=C4
+Change Component Designator: OldDesignator=C3 NewDesignator=C5
+Change Component Designator: OldDesignator=C4 NewDesignator=C1
+Change Component Designator: OldDesignator=C5 NewDesignator=C2
+Change Component Designator: OldDesignator=D1 NewDesignator=D2
+Change Component Designator: OldDesignator=D2 NewDesignator=D1
+Change Component Designator: OldDesignator=D3 NewDesignator=D5
+Change Component Designator: OldDesignator=D4 NewDesignator=D3
+Change Component Designator: OldDesignator=D5 NewDesignator=D4
+Change Component Designator: OldDesignator=J1 NewDesignator=J3
+Change Component Designator: OldDesignator=J3 NewDesignator=J1
+Change Component Designator: OldDesignator=K1 NewDesignator=K2
+Change Component Designator: OldDesignator=K2 NewDesignator=K1
+Change Component Designator: OldDesignator=R1 NewDesignator=R2
+Change Component Designator: OldDesignator=R2 NewDesignator=R5
+Change Component Designator: OldDesignator=R3 NewDesignator=R9
+Change Component Designator: OldDesignator=R5 NewDesignator=R3
+Change Component Designator: OldDesignator=R6 NewDesignator=R7
+Change Component Designator: OldDesignator=R7 NewDesignator=R10
+Change Component Designator: OldDesignator=R8 NewDesignator=R1
+Change Component Designator: OldDesignator=R9 NewDesignator=R14
+Change Component Designator: OldDesignator=R10 NewDesignator=R11
+Change Component Designator: OldDesignator=R11 NewDesignator=R12
+Change Component Designator: OldDesignator=R12 NewDesignator=R13
+Change Component Designator: OldDesignator=R13 NewDesignator=R6
+Change Component Designator: OldDesignator=R14 NewDesignator=R8
+Added Component: Designator=*1(Mounting Holes)
+Added Component: Designator=*2(Mounting Holes)
+Added Component: Designator=*3(Mounting Holes)
+Added Pin To Net: NetName=GND Pin=*1-1
+Added Pin To Net: NetName=GND Pin=*2-1
+Added Pin To Net: NetName=GND Pin=*3-1
+Change Net Name : Old Net Name=NetC2_2 New Net Name=NetC4_2
+Change Net Name : Old Net Name=NetC4_2 New Net Name=NetC1_2
+Change Net Name : Old Net Name=NetD1_+ New Net Name=NetD2_+
+Change Net Name : Old Net Name=NetD3_+ New Net Name=NetD5_+
+Change Net Name : Old Net Name=NetD3_- New Net Name=NetD5_-
+Change Net Name : Old Net Name=NetD4_+ New Net Name=NetD3_+
+Change Net Name : Old Net Name=NetD4_- New Net Name=NetD3_-
+Change Net Name : Old Net Name=NetD5_+ New Net Name=NetD4_+
+Change Net Name : Old Net Name=NetD5_- New Net Name=NetD4_-
+Change Net Name : Old Net Name=NetK1_1 New Net Name=NetK1_3
+Change Net Name : Old Net Name=NetK1_2 New Net Name=NetK2_2
+Change Net Name : Old Net Name=NetR3_1 New Net Name=NetR9_1
+Change Net Name : Old Net Name=NetR7_1 New Net Name=NetR10_1
+Change Net Name : Old Net Name=NetR8_2 New Net Name=NetR1_2
+Change Net Name : Old Net Name=NetR11_2 New Net Name=NetR12_2
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component *1 Mounting Holes
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component *2 Mounting Holes
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component *3 Mounting Holes
