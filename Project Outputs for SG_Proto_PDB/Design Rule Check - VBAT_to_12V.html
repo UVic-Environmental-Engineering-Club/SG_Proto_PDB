@@ -1,0 +1,487 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD23\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">24/09/29</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">3:01:38 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc" class="file"><acronym title="C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc">C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">4</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">37</td></tr>
+</table>
+</td>
+</table><a name="ID05SYNCDKABZCBCNTM4H4OJ402JVJDYKZMVIH5KFWJO5NXSJS1T5H"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDKMXFUJM3JVJGXFBYUXC3HKHDOCYRVYBH4VPRCJBKLBMVJZFALDL">Unplated multi-layer pad(s) detected</a></td>
+<td class="column2">4</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">4</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDC1JVS4R43I5VIKOB3C42X4LJUB0DRABJDPWROJFJ0F2O1AARCFGB">Clearance Constraint (Gap=0.2mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDLJW240PQU23FDXH20C1SYCESNKOWS2GRAC02AKGTNQU1GHIGV3YN">Clearance Constraint (Gap=0.203mm) (OnLayer('Bottom Layer')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPJUF1DQHNE14LZ42J0STM51EPKYCH3QX4C4ALNQK3BE2BXM4IXI">Clearance Constraint (Gap=0.203mm) (OnLayer('Top Layer')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFJ5GICEC53RRBNVMZAK2WRW0BEYXB5W35EOSNFIVYLR34Q0EJYHG">Clearance Constraint (Gap=0.2mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAU05MJCTPIVEH5CHENRM2GCZHLYH24EOCUMPZKFHXG45G0R3KGUD">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDY3UBNKWASI3GPWWKTM1LZFUULEYQXNUQIH2WD4BXLRVFRSLZK2TB">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">6</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDLDOMPLMU2SHROTQXFVCR1EK2WJ4O1VXLFOGH1CM1UHHC0B32F5DP">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDJVQ3EC0KYKGL2MWJ0HC21VRPMSGQUHD2QREICKTRY331NHOFIN">Width Constraint (Min=0.089mm) (Max=2.54mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID41YS3XDL25Y2IP05QTRYL2OAUKRTDRSK5IUINQNUTCET4EAYPAFI">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDK1OHEEUOCKCUEF1Z41PFC25O5DY1R5OFCCXQVVNBMUP3VOSQIN3J">Minimum Annular Ring (Minimum=0.13mm) (All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID3L2ST2NWZSDEC3EJNYAFTKKRLO1PTT430WCLYEM5YP4XBNO4Q2LD">Hole Size Constraint (Min=0.2mm) (Max=6.3mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0ZPVCPLVZCHGJDVOGM0JLUTFKFUAQ2STH3XV4LMDKBFFEO0IERSI">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSRVHCKOJADTJCBTHRVGQIWHCPPZOXHKP1WMKOALLQQFCJQXHHWTC">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">27</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDEYWURCNJLZTTJKN13A2WHNAV2EMSI4TOYHCHHAD0QPLPH4HDITE">Silk To Solder Mask (Clearance=0.1mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQP2VJD411JB2DBB4UOJWEGBA1OQFSSWLH510ROCEVWZ2VPWNUK0H">Silk to Silk (Clearance=0.1mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDNJEPEP0T5EOVH2DVWAYUYKE0GKND4Y0UJZ4G25NGQDQFP1ANXMCC">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJN2WDETWWQISI1F4ZWN3AKSDMM3PO2MC0KBQADM2CT43LYMS3CKO">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUASNAOVUADITCMKSAHUEDILNLOQXZ5WKEC5TDYNN0XIFCJ0QDZPE">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">37</td>
+</tr>
+</table><br><a name="IDDCREZFJANR4EFYDQGRU3WUXSMOF4WQI2ERAN3OJNWOLZXVCOC3NP"><h2>Warnings</h2></a><a name="IDDKMXFUJM3JVJGXFBYUXC3HKHDOCYRVYBH4VPRCJBKLBMVJZFALDL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">Unplated multi-layer pad(s) detected</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1039.37mil|Location2.X=1196.85mil|Location1.Y=1039.37mil|Location2.Y=1196.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1039.37mil|Location2.X=1196.85mil|Location1.Y=1039.37mil|Location2.Y=1196.85mil|Absolute=True">Pad *3-1(3mm,3mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1039.37mil|Location2.X=4188.976mil|Location1.Y=1039.37mil|Location2.Y=2417.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1039.37mil|Location2.X=4188.976mil|Location1.Y=1039.37mil|Location2.Y=2417.323mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1039.37mil|Location2.X=1196.85mil|Location1.Y=2259.843mil|Location2.Y=2417.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1039.37mil|Location2.X=1196.85mil|Location1.Y=2259.843mil|Location2.Y=2417.323mil|Absolute=True">Pad *2-1(3mm,34mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1039.37mil|Location2.X=4188.976mil|Location1.Y=1039.37mil|Location2.Y=2417.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1039.37mil|Location2.X=4188.976mil|Location1.Y=1039.37mil|Location2.Y=2417.323mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4031.496mil|Location2.X=4188.976mil|Location1.Y=2259.843mil|Location2.Y=2417.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4031.496mil|Location2.X=4188.976mil|Location1.Y=2259.843mil|Location2.Y=2417.323mil|Absolute=True">Pad *1-1(79mm,34mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1039.37mil|Location2.X=4188.976mil|Location1.Y=1039.37mil|Location2.Y=2417.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1039.37mil|Location2.X=4188.976mil|Location1.Y=1039.37mil|Location2.Y=2417.323mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4031.496mil|Location2.X=4188.976mil|Location1.Y=1039.37mil|Location2.Y=1196.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4031.496mil|Location2.X=4188.976mil|Location1.Y=1039.37mil|Location2.Y=1196.85mil|Absolute=True">Pad *4-1(79mm,3mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1039.37mil|Location2.X=4188.976mil|Location1.Y=1039.37mil|Location2.Y=2417.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1039.37mil|Location2.X=4188.976mil|Location1.Y=1039.37mil|Location2.Y=2417.323mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDY3UBNKWASI3GPWWKTM1LZFUULEYQXNUQIH2WD4BXLRVFRSLZK2TB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4016.496mil|Location2.X=4203.976mil|Location1.Y=2244.843mil|Location2.Y=2432.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4016.496mil|Location2.X=4203.976mil|Location1.Y=2244.843mil|Location2.Y=2432.323mil|Absolute=True">Un-Routed Net Constraint: Unplated Pad *1-1(79mm,34mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4016.496mil|Location2.X=4203.976mil|Location1.Y=2244.843mil|Location2.Y=2432.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4016.496mil|Location2.X=4203.976mil|Location1.Y=2244.843mil|Location2.Y=2432.323mil|Absolute=True">Un-Routed Net Constraint: Unplated Pad *1-1(79mm,34mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1024.37mil|Location2.X=1211.85mil|Location1.Y=2244.843mil|Location2.Y=2432.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1024.37mil|Location2.X=1211.85mil|Location1.Y=2244.843mil|Location2.Y=2432.323mil|Absolute=True">Un-Routed Net Constraint: Unplated Pad *2-1(3mm,34mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1024.37mil|Location2.X=1211.85mil|Location1.Y=2244.843mil|Location2.Y=2432.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1024.37mil|Location2.X=1211.85mil|Location1.Y=2244.843mil|Location2.Y=2432.323mil|Absolute=True">Un-Routed Net Constraint: Unplated Pad *2-1(3mm,34mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1024.37mil|Location2.X=1211.85mil|Location1.Y=1024.37mil|Location2.Y=1211.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1024.37mil|Location2.X=1211.85mil|Location1.Y=1024.37mil|Location2.Y=1211.85mil|Absolute=True">Un-Routed Net Constraint: Unplated Pad *3-1(3mm,3mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4016.496mil|Location2.X=4203.976mil|Location1.Y=1024.37mil|Location2.Y=1211.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4016.496mil|Location2.X=4203.976mil|Location1.Y=1024.37mil|Location2.Y=1211.85mil|Absolute=True">Un-Routed Net Constraint: Unplated Pad *4-1(79mm,3mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDK1OHEEUOCKCUEF1Z41PFC25O5DY1R5OFCCXQVVNBMUP3VOSQIN3J"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Annular Ring (Minimum=0.13mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4108.03mil|Location2.X=4112.442mil|Location1.Y=2336.377mil|Location2.Y=2340.789mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4108.03mil|Location2.X=4112.442mil|Location1.Y=2336.377mil|Location2.Y=2340.789mil|Absolute=True">Minimum Annular Ring: (No Ring) Pad *1-1(79mm,34mm) on Multi-Layer (Annular Ring missing on Mid Layer 1)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1115.904mil|Location2.X=1120.316mil|Location1.Y=2336.377mil|Location2.Y=2340.789mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1115.904mil|Location2.X=1120.316mil|Location1.Y=2336.377mil|Location2.Y=2340.789mil|Absolute=True">Minimum Annular Ring: (No Ring) Pad *2-1(3mm,34mm) on Multi-Layer (Annular Ring missing on Mid Layer 1)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1115.904mil|Location2.X=1120.316mil|Location1.Y=1115.904mil|Location2.Y=1120.316mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1115.904mil|Location2.X=1120.316mil|Location1.Y=1115.904mil|Location2.Y=1120.316mil|Absolute=True">Minimum Annular Ring: (No Ring) Pad *3-1(3mm,3mm) on Multi-Layer (Annular Ring missing on Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4108.03mil|Location2.X=4112.442mil|Location1.Y=1115.904mil|Location2.Y=1120.316mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4108.03mil|Location2.X=4112.442mil|Location1.Y=1115.904mil|Location2.Y=1120.316mil|Absolute=True">Minimum Annular Ring: (No Ring) Pad *4-1(79mm,3mm) on Multi-Layer (Annular Ring missing on Top Layer)</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDSRVHCKOJADTJCBTHRVGQIWHCPPZOXHKP1WMKOALLQQFCJQXHHWTC"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2257.406mil|Location2.X=2262.593mil|Location1.Y=1794.005mil|Location2.Y=1799.192mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2257.406mil|Location2.X=2262.593mil|Location1.Y=1794.005mil|Location2.Y=1799.192mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.077mm &lt; 0.1mm) Between Pad C3-1(32.444mm,19.812mm) on Layer 1 (TOP) And Pad C3-2(31.564mm,19.812mm) on Layer 1 (TOP) [Top Solder] Mask Sliver [0.077mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2471.508mil|Location2.X=2476.695mil|Location1.Y=1391.603mil|Location2.Y=1396.79mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2471.508mil|Location2.X=2476.695mil|Location1.Y=1391.603mil|Location2.Y=1396.79mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.077mm &lt; 0.1mm) Between Pad C4-1(37.882mm,9.591mm) on Layer 1 (TOP) And Pad C4-2(37.002mm,9.591mm) on Layer 1 (TOP) [Top Solder] Mask Sliver [0.077mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2457.407mil|Location2.X=2462.593mil|Location1.Y=1358.312mil|Location2.Y=1363.499mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2457.407mil|Location2.X=2462.593mil|Location1.Y=1358.312mil|Location2.Y=1363.499mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.005mm &lt; 0.1mm) Between Pad C4-2(37.002mm,9.591mm) on Layer 1 (TOP) And Via (37.084mm,8.763mm) from Layer 1 (TOP) to Layer 4 (BOTTOM) [Top Solder] Mask Sliver [0.005mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2185.808mil|Location2.X=2190.995mil|Location1.Y=1670.083mil|Location2.Y=1675.271mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2185.808mil|Location2.X=2190.995mil|Location1.Y=1670.083mil|Location2.Y=1675.271mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.077mm &lt; 0.1mm) Between Pad C6-1(30.607mm,17.526mm) on Layer 1 (TOP) And Pad C6-2(30.607mm,16.646mm) on Layer 1 (TOP) [Top Solder] Mask Sliver [0.077mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2184.513mil|Location2.X=2189.7mil|Location1.Y=1652.407mil|Location2.Y=1657.593mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2184.513mil|Location2.X=2189.7mil|Location1.Y=1652.407mil|Location2.Y=1657.593mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.066mm &lt; 0.1mm) Between Pad C6-2(30.607mm,16.646mm) on Layer 1 (TOP) And Via (29.718mm,16.637mm) from Layer 1 (TOP) to Layer 4 (BOTTOM) [Top Solder] Mask Sliver [0.066mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2279.788mil|Location2.X=2284.975mil|Location1.Y=1691.052mil|Location2.Y=1696.239mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2279.788mil|Location2.X=2284.975mil|Location1.Y=1691.052mil|Location2.Y=1696.239mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.022mm &lt; 0.1mm) Between Pad U1-10(32.11mm,17.367mm) on Layer 1 (TOP) And Pad U1-9(32.835mm,17.817mm) on Layer 1 (TOP) [Top Solder] Mask Sliver [0.022mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.296mil|Location2.X=2286.483mil|Location1.Y=1677.21mil|Location2.Y=1682.397mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.296mil|Location2.X=2286.483mil|Location1.Y=1677.21mil|Location2.Y=1682.397mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-10(32.11mm,17.367mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.296mil|Location2.X=2286.483mil|Location1.Y=1671.367mil|Location2.Y=1676.554mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.296mil|Location2.X=2286.483mil|Location1.Y=1671.367mil|Location2.Y=1676.554mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-11(32.11mm,16.867mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.296mil|Location2.X=2286.483mil|Location1.Y=1651.682mil|Location2.Y=1656.869mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.296mil|Location2.X=2286.483mil|Location1.Y=1651.682mil|Location2.Y=1656.869mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-12(32.11mm,16.367mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.296mil|Location2.X=2286.483mil|Location1.Y=1631.997mil|Location2.Y=1637.184mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.296mil|Location2.X=2286.483mil|Location1.Y=1631.997mil|Location2.Y=1637.184mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-13(32.11mm,15.867mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.296mil|Location2.X=2286.483mil|Location1.Y=1612.312mil|Location2.Y=1617.499mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.296mil|Location2.X=2286.483mil|Location1.Y=1612.312mil|Location2.Y=1617.499mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-14(32.11mm,15.367mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.296mil|Location2.X=2286.483mil|Location1.Y=1592.627mil|Location2.Y=1597.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.296mil|Location2.X=2286.483mil|Location1.Y=1592.627mil|Location2.Y=1597.814mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-15(32.11mm,14.867mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.296mil|Location2.X=2286.483mil|Location1.Y=1572.942mil|Location2.Y=1578.129mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.296mil|Location2.X=2286.483mil|Location1.Y=1572.942mil|Location2.Y=1578.129mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-16(32.11mm,14.367mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.296mil|Location2.X=2286.483mil|Location1.Y=1553.257mil|Location2.Y=1558.444mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.296mil|Location2.X=2286.483mil|Location1.Y=1553.257mil|Location2.Y=1558.444mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-17(32.11mm,13.867mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2279.788mil|Location2.X=2284.975mil|Location1.Y=1523.729mil|Location2.Y=1528.916mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2279.788mil|Location2.X=2284.975mil|Location1.Y=1523.729mil|Location2.Y=1528.916mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.022mm &lt; 0.1mm) Between Pad U1-18(32.11mm,13.367mm) on Layer 1 (TOP) And Pad U1-19(32.835mm,12.917mm) on Layer 1 (TOP) [Top Solder] Mask Sliver [0.022mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.296mil|Location2.X=2286.483mil|Location1.Y=1533.572mil|Location2.Y=1538.759mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2281.296mil|Location2.X=2286.483mil|Location1.Y=1533.572mil|Location2.Y=1538.759mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-18(32.11mm,13.367mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2283.233mil|Location2.X=2288.42mil|Location1.Y=1525.666mil|Location2.Y=1530.853mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2283.233mil|Location2.X=2288.42mil|Location1.Y=1525.666mil|Location2.Y=1530.853mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-19(32.835mm,12.917mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2299.903mil|Location2.X=2305.09mil|Location1.Y=1525.666mil|Location2.Y=1530.853mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2299.903mil|Location2.X=2305.09mil|Location1.Y=1525.666mil|Location2.Y=1530.853mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-20(33.335mm,12.917mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2319.588mil|Location2.X=2324.775mil|Location1.Y=1525.666mil|Location2.Y=1530.853mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2319.588mil|Location2.X=2324.775mil|Location1.Y=1525.666mil|Location2.Y=1530.853mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-21(33.835mm,12.917mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2339.273mil|Location2.X=2344.46mil|Location1.Y=1525.666mil|Location2.Y=1530.853mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2339.273mil|Location2.X=2344.46mil|Location1.Y=1525.666mil|Location2.Y=1530.853mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-22(34.335mm,12.917mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2358.958mil|Location2.X=2364.145mil|Location1.Y=1525.666mil|Location2.Y=1530.853mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2358.958mil|Location2.X=2364.145mil|Location1.Y=1525.666mil|Location2.Y=1530.853mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-23(34.835mm,12.917mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2364.926mil|Location2.X=2370.113mil|Location1.Y=1679.147mil|Location2.Y=1684.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2364.926mil|Location2.X=2370.113mil|Location1.Y=1679.147mil|Location2.Y=1684.334mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-5(34.835mm,17.817mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2378.769mil|Location2.X=2383.956mil|Location1.Y=1679.147mil|Location2.Y=1684.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2378.769mil|Location2.X=2383.956mil|Location1.Y=1679.147mil|Location2.Y=1684.334mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-5(34.835mm,17.817mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2359.084mil|Location2.X=2364.271mil|Location1.Y=1679.147mil|Location2.Y=1684.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2359.084mil|Location2.X=2364.271mil|Location1.Y=1679.147mil|Location2.Y=1684.334mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-6(34.335mm,17.817mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2339.399mil|Location2.X=2344.586mil|Location1.Y=1679.147mil|Location2.Y=1684.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2339.399mil|Location2.X=2344.586mil|Location1.Y=1679.147mil|Location2.Y=1684.334mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-7(33.835mm,17.817mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2319.714mil|Location2.X=2324.901mil|Location1.Y=1679.147mil|Location2.Y=1684.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2319.714mil|Location2.X=2324.901mil|Location1.Y=1679.147mil|Location2.Y=1684.334mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-8(33.335mm,17.817mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2300.028mil|Location2.X=2305.215mil|Location1.Y=1679.147mil|Location2.Y=1684.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Desktop\Other\Projects\UVEEC\SG_Proto_PDB\VBAT_to_12V.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2300.028mil|Location2.X=2305.215mil|Location1.Y=1679.147mil|Location2.Y=1684.334mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.1mm) Between Pad U1-9(32.835mm,17.817mm) on Layer 1 (TOP) And Region (0 hole(s)) Top Solder [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
