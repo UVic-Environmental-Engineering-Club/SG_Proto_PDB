@@ -1,0 +1,16 @@
+Change Component Footprint: Designator=U1 Old Footprint=SIC450ED-T1-GE3 New Footprint=VREG_SIC450ED-T1-GE3
+Change Managed Component Library Link : Designator=U1 Old VaultGUID= New VaultGUID=e73b7219-2e48-40df-8e58-9f282843690a Old ItemGUID= New ItemGUID=7B50BD0C-CB92-483E-81F3-1E356D134AB9 Old RevisionGUID= New RevisionGUID=7957b6a0-c6cd-442c-aec0-b0a01677448b
+Change component parameters: Designator = "U1" ("U1"); Footprint = "SIC450ED-T1-GE3"; UniqueID = "\BZVZPXLD" ("\BZVZPXLD")
+Change component parameters (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/SIC450ED-T1-GE3/Vishay+Siliconix/view-part/?ref=eda"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Design Item ID"; Value = "SIC450ED-T1-GE3"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "Vishay Siliconix"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "SIC450ED-T1-GE3"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "PowerWFQFN-34 Vishay Siliconix"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pin Count"; Value = "25"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/SIC450ED-T1-GE3/?ref=eda"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/SIC450ED-T1-GE3/Vishay+Siliconix/view-part/?ref=snap"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Source"; Value = "SIC450ED-T1-GE3.SchLib"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
