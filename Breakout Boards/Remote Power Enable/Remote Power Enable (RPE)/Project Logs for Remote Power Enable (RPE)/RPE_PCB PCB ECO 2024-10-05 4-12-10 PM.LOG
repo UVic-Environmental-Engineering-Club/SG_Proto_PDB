@@ -1,0 +1,19 @@
+Removed Pin From Net: NetName=GND Pin=*1-1
+Removed Pin From Net: NetName=GND Pin=*2-1
+Removed Pin From Net: NetName=GND Pin=*3-1
+Change Footprint: Cannot match pads with new footprint in component :J2 Footprint:FIT0588
+Change Footprint: Cannot match pads with new footprint in component :J3 Footprint:FIT0588
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component C1 1 uF Capacitor
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component C3 GRM188D71A106MA73J
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component C4 GRM188D71A106MA73J
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component C5 1 uF Capacitor
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component D1 *
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component D3 RED THROUGH HOLE LED
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component D5 RED THROUGH HOLE LED
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component J3 FIT0588
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component K1 50A RELAY
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component R5 SG73P1JTTD1601F
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component R10 SG73P1JTTD1601F
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component R11 RC0603FR-075K1L
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component R13 RMCF0603FT620R
+Added Member To Class: ClassName=RPE_Schematic (Finished) Member=Component R14 RC0603FR-075K1L
