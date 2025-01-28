@@ -1,0 +1,21 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Microcontroller.PcbDoc   2024-10-08  4:53:49 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Signal Layer to 5V Layer
+ASCII RoundHoles File : Microcontroller.TXT
+EIA File   : Microcontroller.DRL
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      28mil (0.711mm)                                           Round             23        PTH        10.08inch (255.92mm)
+T2      39mil (1.001mm)                                           Round             6         PTH        3.57inch (90.71mm)
+T3      40mil (1.021mm)                                           Round             128       PTH        22.26inch (565.38mm)
+T4      47mil (1.199mm)                                           Round             10        PTH        1.10inch (27.94mm)
+T5      136mil (3.459mm)                                          Round             2         PTH        0.31inch (8.00mm)
+T6      126mil (3.2mm)                                            Round             5         NPTH       8.75inch (222.20mm)
+T7      158mil (4.001mm)                                          Round             4         NPTH       16.65inch (423.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              178
+
+Total Processing Time (hh:mm:ss) : 00:00:00

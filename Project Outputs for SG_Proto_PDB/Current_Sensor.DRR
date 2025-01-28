@@ -1,0 +1,20 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Current_Sensor.PcbDoc   2024-10-07  7:03:22 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : VBAT to Bottom Layer
+ASCII RoundHoles File : Current_Sensor.TXT
+EIA File   : Current_Sensor.DRL
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      28mil (0.711mm)                                           Round             6         PTH        3.26inch (82.68mm)
+T2      39mil (1.001mm)                                           Round             4         PTH        2.69inch (68.26mm)
+T3      40mil (1.021mm)                                           Round             2         PTH        0.10inch (2.54mm)
+T4      43mil (1.1mm)                                             Round             2         PTH        0.10inch (2.54mm)
+T5      63mil (1.6mm)                                             Round             16        PTH        6.00inch (152.33mm)
+T6      158mil (4.001mm)                                          Round             4         NPTH       6.26inch (159.06mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              34
+
+Total Processing Time (hh:mm:ss) : 00:00:00

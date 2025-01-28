@@ -1,0 +1,382 @@
+*************************************************************
+FileName = VBAT_to_12V.GBR
+AutoAperture = True
+*************************************************************
+Generating : Layer 2 (GND)
+      File : VBAT_to_12V_Copper_Signal_1.gbr
+
+    Adding Layer      : Layer 2 (GND)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D35
+    D36
+    D45
+    D46
+    D47
+    D48
+    D49
+*************************************************************
+
+*************************************************************
+Generating : Layer 3 (GND)
+      File : VBAT_to_12V_Copper_Signal_2.gbr
+
+    Adding Layer      : Layer 3 (GND)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D35
+    D36
+    D45
+    D46
+    D47
+    D48
+    D49
+*************************************************************
+
+*************************************************************
+Generating : Layer 4 (BOTTOM)
+      File : VBAT_to_12V_Copper_Signal_Bot.gbr
+
+    Adding Layer      : Layer 4 (BOTTOM)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D35
+    D36
+    D45
+    D46
+    D47
+    D48
+    D49
+*************************************************************
+
+*************************************************************
+Generating : Layer 1 (TOP)
+      File : VBAT_to_12V_Copper_Signal_Top.gbr
+
+    Adding Layer      : Layer 1 (TOP)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D35
+    D36
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : VBAT_to_12V_Pads_Top.gbr
+
+    Adding Layer      : Layer 1 (TOP)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D35
+    D36
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : VBAT_to_12V_Paste_Top.gbr
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Layer 1 (TOP)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : VBAT_to_12V_Mechanical_1.gbr
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top 3D Body
+      File : VBAT_to_12V_Top_3D_Body.gbr
+
+    Adding Layer      : Top 3D Body
+
+
+Used DCodes :
+    D10
+    D50
+*************************************************************
+
+*************************************************************
+Generating : Top Designator
+      File : VBAT_to_12V_Top_Designator.gbr
+
+    Adding Layer      : Top Designator
+
+
+Used DCodes :
+    D13
+    D14
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : VBAT_to_12V_Soldermask_Top.gbr
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Layer 1 (TOP)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D16
+    D18
+    D21
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : VBAT_to_12V_Soldermask_Bot.gbr
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Layer 4 (BOTTOM)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+*************************************************************
+
+*************************************************************
+Generating : Top Courtyard
+      File : VBAT_to_12V_Top_Courtyard.gbr
+
+    Adding Layer      : Top Courtyard
+
+
+Used DCodes :
+    D10
+    D51
+*************************************************************
+
+*************************************************************
+Generating : Top Assembly
+      File : VBAT_to_12V_Top_Assembly.gbr
+
+    Adding Layer      : Top Assembly
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Top Component Center
+      File : VBAT_to_12V_Top_Component_Center.gbr
+
+    Adding Layer      : Top Component Center
+
+
+Used DCodes :
+    D50
+*************************************************************
+
+*************************************************************
+Generating : Top Component Outline
+      File : VBAT_to_12V_Top_Component_Outline.gbr
+
+    Adding Layer      : Top Component Outline
+
+
+Used DCodes :
+    D50
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : VBAT_to_12V_Legend_Top.gbr
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : VBAT_to_12V_Pads_Bot.gbr
+
+    Adding Layer      : Layer 4 (BOTTOM)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D35
+    D36
+    D45
+    D46
+    D47
+    D48
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 13
+      File : VBAT_to_12V_Mechanical_13.gbr
+
+    Adding Layer      : Mechanical 13
+
+
+Used DCodes :
+    D10
+    D12
+    D50
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 15
+      File : VBAT_to_12V_Mechanical_15.gbr
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+    D50
+    D51
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : VBAT_to_12V_Drawing_1.gbr
+
+    Adding Drill Pair : Layer 1 (TOP)-Layer 4 (BOTTOM)
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D12
+    D52
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : VBAT_to_12V_Drillmap_1.gbr
+
+    Adding Drill Pair : Layer 1 (TOP)-Layer 4 (BOTTOM)
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D12
+*************************************************************
+
+*************************************************************
+Generating : Profile
+      File : VBAT_to_12V_Profile.gbr
+
+
+Used DCodes :
+    D53
+*************************************************************
+
